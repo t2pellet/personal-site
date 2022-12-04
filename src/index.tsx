@@ -1,13 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import App from './App';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement,
-);
+const theme = createTheme({
+    palette: {
+        mode: 'dark',
+        text: {
+            secondary: '#b2c2e2'
+        },
+        background: {
+            default: '#2c3034'
+        }
+    },
+    typography: {
+        h1: {
+            fontSize: 'calc(1.625rem + 4.5vw)'
+        },
+        body1: {
+            fontSize: '1rem'
+        }
+    }
+});
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <React.StrictMode>
+        <ThemeProvider theme={theme}>
+            <CssBaseline enableColorScheme>
+                <App />
+            </CssBaseline>
+        </ThemeProvider>
+    </React.StrictMode>
 );
