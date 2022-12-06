@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { AppBar, Box, Button, Toolbar } from '@mui/material';
 import AboutMe from './section/AboutMe';
+import Projects from './section/Projects';
 
 const navItems = ['About Me', 'Projects', 'History', 'Get In Touch'];
 
@@ -29,7 +30,10 @@ function App() {
                     </Box>
                 </Toolbar>
             </AppBar>
-            <div className='Content'>{AboutMe()}</div>
+            <div className='Content'>
+                {AboutMe()}
+                {Projects()}
+            </div>
         </div>
     );
 }

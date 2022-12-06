@@ -9,7 +9,12 @@ export default function AboutMe() {
         <div id='About Me'>
             <CenterGrid>
                 <GridItem xs={11} md={5}>
-                    <img className='ProfileImage' src='/headshot.jpg' alt='Profile' width='100%' />
+                    <img
+                        className='ProfileImage'
+                        src='/img/headshot.jpg'
+                        alt='Profile'
+                        width='100%'
+                    />
                 </GridItem>
                 <GridItem xs={11} md={7}>
                     <br />
