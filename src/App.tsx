@@ -9,8 +9,8 @@ const navItems = ['About Me', 'Projects', 'History', 'Get In Touch'];
 const scrollTo = async (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-        const scrollOffset = (window.innerWidth / 100) * -3;
-        const scrollPosition = element.scrollTop;
+        const scrollOffset = -3 * (window.innerWidth / 100) - 20;
+        const scrollPosition = element.offsetTop;
         await element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         await window.scrollTo({ behavior: 'smooth', top: scrollPosition + scrollOffset });
     }
