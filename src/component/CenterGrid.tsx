@@ -10,6 +10,7 @@ export default function CenterGrid(props: PropsWithChildren) {
             justifyContent='center'
             justifySelf='center'
             columnSpacing={4}
+            rowSpacing={4}
         >
             {children}
         </Grid>
