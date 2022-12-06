@@ -41,6 +41,12 @@ export default function Projects() {
                     image='/img/salem.png'
                     url='https://github.com/t2pellet/SalemModerator'
                 />
+                <ProjectCard
+                    name='Portfolio Site'
+                    description="This website you're on! Made with React"
+                    image='/img/website.png'
+                    url='https://github.com/t2pellet/t2pellet.me'
+                />
             </CenterGrid>
         </div>
     );
