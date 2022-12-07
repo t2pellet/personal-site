@@ -3,10 +3,11 @@ import { Typography } from '@mui/material';
 import CenterGrid, { GridItem } from '../component/CenterGrid';
 import StyledText from '../text/StyledText';
 import Paragraph from '../text/Paragraph';
+import Section from '../component/Section';
 
 export default function AboutMe() {
     return (
-        <div id='About Me'>
+        <Section id='About Me' noHeading>
             <CenterGrid>
                 <GridItem xs={11} md={5}>
                     <img
@@ -43,6 +44,6 @@ export default function AboutMe() {
                     </Paragraph>
                 </GridItem>
             </CenterGrid>
-        </div>
+        </Section>
     );
 }
