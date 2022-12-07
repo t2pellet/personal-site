@@ -6,13 +6,13 @@ type ParagraphProps = PropsWithChildren & {
     size?: string;
 };
 
-const defaultProps: ParagraphProps = {
+const defaultProps = {
     colour: 'text.secondary',
     size: '16px'
 };
 
 function Paragraph(props: ParagraphProps) {
-    const { children, colour = defaultProps.colour, size = defaultProps.size } = props;
+    const { children, colour, size } = props;
     return (
         <Typography variant='body1' paragraph color={colour} fontSize={size}>
             {children}
