@@ -1,8 +1,8 @@
 import React from 'react';
 import './ProjectCard.css';
 import { Paper, Typography, useTheme } from '@mui/material';
-import Paragraph from '../text/Paragraph';
-import { GridItem } from './CenterGrid';
+import Paragraph from '../../text/Paragraph';
+import { GridItem } from '../CenterGrid';
 
 type ProjectCardProps = {
     name: string;
@@ -11,7 +11,7 @@ type ProjectCardProps = {
     url: string;
 };
 
-export default function ProjectCard(props: ProjectCardProps) {
+export default function Index(props: ProjectCardProps) {
     const { name, description, image, url } = props;
     const { palette } = useTheme();
     return (
