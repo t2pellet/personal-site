@@ -1,21 +1,11 @@
 import React from 'react';
-import { Typography } from '@mui/material';
 import CenterGrid from '../component/CenterGrid';
 import ProjectCard from '../component/ProjectCard';
+import Section from '../component/Section';
 
 export default function Projects() {
     return (
-        <div id='Projects'>
-            <Typography
-                alignContent='center'
-                justifyContent='center'
-                justifySelf='center'
-                textAlign='center'
-                marginBottom='32px'
-                variant='h2'
-            >
-                Projects
-            </Typography>
+        <Section id='Projects'>
             <CenterGrid>
                 <ProjectCard
                     name='Strawgolem'
@@ -48,6 +38,6 @@ export default function Projects() {
                     url='https://github.com/t2pellet/t2pellet.me'
                 />
             </CenterGrid>
-        </div>
+        </Section>
     );
 }

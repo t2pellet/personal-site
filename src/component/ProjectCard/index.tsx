@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProjectCard.css';
+import './style.css';
 import { Paper, Typography, useTheme } from '@mui/material';
 import Paragraph from '../../text/Paragraph';
 import { GridItem } from '../CenterGrid';

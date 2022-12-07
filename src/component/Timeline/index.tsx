@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 import StyledText from '../../text/StyledText';
-import './Timeline.css';
+import './style.css';
 
 type TimelineEventProps = {
     company: string;
