@@ -1,36 +1,22 @@
 import React from 'react';
 import './App.css';
-import { AppBar, Box, Button, Toolbar } from '@mui/material';
 import AboutMe from './section/AboutMe';
 import Projects from './section/Projects';
 import History from './section/History';
+import Contact from './section/Contact';
+import NavBar, { NavItem } from './component/NavBar';
 
-const navItems = ['About Me', 'Projects', 'History', 'Get In Touch'];
-
-const scrollTo = async (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-        const scrollOffset = -3 * (window.innerWidth / 100) - 20;
-        const scrollPosition = element.offsetTop;
-        await element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        await window.scrollTo({ behavior: 'smooth', top: scrollPosition + scrollOffset });
-    }
-};
+const navItems: NavItem[] = [
+    { name: 'About Me', id: 'About' },
+    { name: 'Projects', id: 'Projects' },
+    { name: 'History', id: 'History' },
+    { name: 'Get In Touch', id: 'Contact' }
+];
 
 function App() {
     return (
         <div className='App'>
-            <AppBar position='sticky'>
-                <Toolbar>
-                    <Box>
-                        {navItems.map((item) => (
-                            <Button key={item} color='inherit' onClick={() => scrollTo(item)}>
-                                {item}
-                            </Button>
-                        ))}
-                    </Box>
-                </Toolbar>
-            </AppBar>
+            <NavBar items={navItems} />
             <div className='Content'>
                 <AboutMe />
                 <Projects />

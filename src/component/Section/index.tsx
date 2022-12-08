@@ -3,18 +3,18 @@ import { Typography } from '@mui/material';
 import './style.css';
 
 type SectionProps = PropsWithChildren & {
+    heading?: string;
     id: string;
-    noHeading?: boolean;
 };
 const defaultProps = {
-    noHeading: false
+    heading: ''
 };
 
 function Section(props: SectionProps) {
-    const { id, noHeading, children } = props;
+    const { id, heading, children } = props;
     return (
         <div className='Section' id={id}>
-            {!noHeading && (
+            {heading && (
                 <Typography
                     alignContent='center'
                     justifyContent='center'
@@ -23,7 +23,7 @@ function Section(props: SectionProps) {
                     marginBottom='32px'
                     variant='h2'
                 >
-                    {id}
+                    {heading}
                 </Typography>
             )}
             {children}

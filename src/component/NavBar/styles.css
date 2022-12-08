@@ -1,0 +1,16 @@
+.NavBar div {
+    align-self: stretch;
+}
+
+.NavBar .NavButton {
+    height: max-content;
+    align-self: center;
+}
+
+.NavBar .NavToggle {
+    height: 100%;
+}
+
+.NavBar .NavToggle svg {
+    transform: scale(1.5);
+}

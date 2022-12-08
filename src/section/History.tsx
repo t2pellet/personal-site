@@ -4,7 +4,7 @@ import Section from '../component/Section';
 
 export default function History() {
     return (
-        <Section id='History'>
+        <Section id='History' heading='Work Experience'>
             <Timeline>
                 <TimelineEvent
                     company='Lifion by ADP'
