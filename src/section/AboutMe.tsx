@@ -8,7 +8,7 @@ import Section from '../component/Section';
 export default function AboutMe() {
     return (
         <Section id='About'>
-            <CenterGrid>
+            <CenterGrid rowSpacing={0}>
                 <GridItem xs={11} md={5}>
                     <img
                         className='ProfileImage'
