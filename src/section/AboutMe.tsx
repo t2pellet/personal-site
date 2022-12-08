@@ -7,7 +7,7 @@ import Section from '../component/Section';
 
 export default function AboutMe() {
     return (
-        <Section id='About Me' noHeading>
+        <Section id='About'>
             <CenterGrid>
                 <GridItem xs={11} md={5}>
                     <img

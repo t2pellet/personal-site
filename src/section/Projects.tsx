@@ -5,7 +5,7 @@ import Section from '../component/Section';
 
 export default function Projects() {
     return (
-        <Section id='Projects'>
+        <Section id='Projects' heading='Projects'>
             <CenterGrid>
                 <ProjectCard
                     name='Strawgolem'
