@@ -14,11 +14,12 @@ import {
 } from '@mui/material';
 import { AiOutlineMenu } from 'react-icons/ai';
 import './styles.css';
+import Scrollspy from 'react-scrollspy';
 
 const scrollTo = async (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-        const scrollOffset = -3 * (window.innerWidth / 100) - 40;
+        const scrollOffset = -3 * (window.innerWidth / 100) - 60;
         const scrollPosition = element.offsetTop;
         await window.scrollTo({ behavior: 'smooth', top: scrollPosition + scrollOffset });
     }
@@ -79,17 +80,24 @@ export default function NavBar(props: NavProps) {
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.up('sm'));
 
-    const drawBig = (navItems: NavItem[]) =>
-        navItems.map((item) => (
-            <Button
-                className='NavButton'
-                key={item.id}
-                color='inherit'
-                onClick={() => scrollTo(item.id)}
-            >
-                {item.name}
-            </Button>
-        ));
+    const drawBig = (navItems: NavItem[]) => (
+        <Scrollspy
+            currentClassName='CurrentSection'
+            offset={-80}
+            items={navItems.map((item) => item.id)}
+        >
+            {navItems.map((item) => (
+                <Button
+                    className='NavButton'
+                    key={item.id}
+                    color='inherit'
+                    onClick={async () => scrollTo(item.id)}
+                >
+                    {item.name}
+                </Button>
+            ))}
+        </Scrollspy>
+    );
 
     const toggleNav = () => {
         const { drawerOpen } = state;

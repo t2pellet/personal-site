@@ -4,7 +4,10 @@
 
 .NavBar .NavButton {
     height: max-content;
-    align-self: center;
+}
+
+.NavBar .NavButton.CurrentSection {
+    color: #0dcaf0 !important;
 }
 
 .NavBar .NavToggle {
