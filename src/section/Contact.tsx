@@ -32,7 +32,7 @@ export default function Contact() {
                     />
                 </GridItem>
                 <GridItem xs={4} sm={2} lg={1}>
-                    <SocialLink name='Phone' url='+15145704380' icon={FaPhoneAlt} />
+                    <SocialLink name='Phone' url='tel:+15145704380' icon={FaPhoneAlt} />
                 </GridItem>
                 <GridItem xs={4} sm={2} lg={1}>
                     <SocialLink name='Resumé' icon={IoNewspaperOutline} url='/doc/resume.pdf' />
