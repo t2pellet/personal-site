@@ -20,10 +20,10 @@ export default function Projects() {
                     url='https://github.com/t2pellet/attentionapp'
                 />
                 <ProjectCard
-                    name='FVTT DigitalOcean Bridge'
-                    description='Application to simplify hosting FoundryVTT on DigitalOcean. Frontend in React, backend in Express'
+                    name='Metalworks'
+                    description='Application to simplify hosting FoundryVTT on DigitalOcean, using React and Express (WIP)'
                     image='/img/fvttdigitalocean.png'
-                    url='https://github.com/orgs/FVTT-DO-Bridge/repositories'
+                    url='https://github.com/orgs/Foundry-Metalworks/repositories'
                 />
                 <ProjectCard
                     name='Salem Moderator'
