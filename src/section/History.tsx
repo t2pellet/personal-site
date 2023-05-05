@@ -7,6 +7,11 @@ export default function History() {
         <Section id='History' heading='Work Experience'>
             <Timeline>
                 <TimelineEvent
+                    company='Vivid Seats'
+                    position='Software Engineer'
+                    dates='Jan 2023 - Aug 2023'
+                />
+                <TimelineEvent
                     company='Lifion by ADP'
                     position='Software Engineer'
                     dates='May 2022 - Aug 2022'
