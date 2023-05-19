@@ -35,7 +35,7 @@ export default function Projects() {
                     name='Portfolio Site'
                     description="This website you're on! Made with React"
                     image='/img/website.png'
-                    url='https://github.com/t2pellet/t2pellet.me'
+                    url='https://github.com/t2pellet/tenzin.live'
                 />
             </CenterGrid>
         </Section>
