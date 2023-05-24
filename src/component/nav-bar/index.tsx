@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import {
     AppBar,
     Box,
@@ -74,16 +75,16 @@ function NavDrawer(props: NavProps & { isOpen: boolean; closeCallback: () => voi
     );
 }
 
-export default function NavBar(props: NavProps) {
+export default function NavBar(props: NavProps): React.ReactElement {
     const { items } = props;
-    const [state, setState] = React.useState({ drawerOpen: false });
+    const [state, setState] = useState({ drawerOpen: false });
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.up('sm'));
 
     const drawBig = (navItems: NavItem[]) => (
         <Scrollspy
             currentClassName='CurrentSection'
-            offset={-80}
+            offset={-85}
             items={navItems.map((item) => item.id)}
         >
             {navItems.map((item) => (

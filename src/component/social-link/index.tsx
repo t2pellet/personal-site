@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { IconType } from 'react-icons';
-import Paragraph from '../../text/Paragraph';
+
+import Paragraph from '../text/paragraph';
 import './style.css';
 
 type SocialLinkProps = {
@@ -9,7 +11,7 @@ type SocialLinkProps = {
     url: string;
 };
 
-export default function SocialLink(props: SocialLinkProps) {
+export default function SocialLink(props: SocialLinkProps): React.ReactElement {
     const { name, icon, url } = props;
     return (
         <div className='SocialLink'>

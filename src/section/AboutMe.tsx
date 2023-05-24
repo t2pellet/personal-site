@@ -1,11 +1,13 @@
 import React from 'react';
-import { Typography } from '@mui/material';
-import CenterGrid, { GridItem } from '../component/CenterGrid';
-import StyledText from '../text/StyledText';
-import Paragraph from '../text/Paragraph';
-import Section from '../component/Section';
 
-export default function AboutMe() {
+import { Typography } from '@mui/material';
+
+import CenterGrid, { GridItem } from '../component/center-grid';
+import Section from '../component/section';
+import Paragraph from '../component/text/paragraph';
+import StyledText from '../component/text/styled-text';
+
+export default function AboutMe(): React.ReactElement {
     return (
         <Section id='About'>
             <CenterGrid rowSpacing={0}>

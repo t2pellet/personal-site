@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from 'react';
+
 import Grid from '@mui/material/Unstable_Grid2';
 
 type CenterGridProps = PropsWithChildren & {
@@ -10,7 +11,7 @@ const defaultProps = {
     rowSpacing: 4
 };
 
-function CenterGrid(props: CenterGridProps) {
+function CenterGrid(props: CenterGridProps): React.ReactElement {
     const { columnSpacing, rowSpacing, children } = props;
     return (
         <Grid

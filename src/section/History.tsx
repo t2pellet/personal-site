@@ -1,8 +1,9 @@
 import React from 'react';
-import Timeline, { TimelineEvent } from '../component/Timeline';
-import Section from '../component/Section';
 
-export default function History() {
+import Section from '../component/section';
+import Timeline, { TimelineEvent } from '../component/timeline';
+
+export default function History(): React.ReactElement {
     return (
         <Section id='History' heading='Work Experience'>
             <Timeline>

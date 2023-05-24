@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from 'react';
+
 import { Typography } from '@mui/material';
 import './style.css';
 
@@ -10,7 +11,7 @@ const defaultProps = {
     heading: ''
 };
 
-function Section(props: SectionProps) {
+function Section(props: SectionProps): React.ReactElement {
     const { id, heading, children } = props;
     return (
         <div className='Section' id={id}>

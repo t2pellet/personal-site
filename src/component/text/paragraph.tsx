@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from 'react';
+
 import { Typography } from '@mui/material';
 
 type ParagraphProps = PropsWithChildren & {
@@ -11,7 +12,7 @@ const defaultProps = {
     size: '16px'
 };
 
-function Paragraph(props: ParagraphProps) {
+function Paragraph(props: ParagraphProps): React.ReactElement {
     const { children, colour, size } = props;
     return (
         <Typography variant='body1' paragraph color={colour} fontSize={size}>

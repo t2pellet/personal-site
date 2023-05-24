@@ -1,9 +1,10 @@
 import React from 'react';
-import CenterGrid from '../component/CenterGrid';
-import ProjectCard from '../component/ProjectCard';
-import Section from '../component/Section';
 
-export default function Projects() {
+import CenterGrid from '../component/center-grid';
+import ProjectCard from '../component/project-card';
+import Section from '../component/section';
+
+function Projects(): React.ReactElement {
     return (
         <Section id='Projects' heading='Projects'>
             <CenterGrid>
@@ -44,3 +45,5 @@ export default function Projects() {
         </Section>
     );
 }
+
+export default Projects;

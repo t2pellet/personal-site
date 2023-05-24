@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { Typography } from '@mui/material';
-import StyledText from '../../text/StyledText';
+
+import StyledText from '../text/styled-text';
 import './style.css';
 
 type TimelineEventProps = {
@@ -8,7 +10,7 @@ type TimelineEventProps = {
     position: string;
     dates: string;
 };
-export function TimelineEvent(props: TimelineEventProps) {
+export function TimelineEvent(props: TimelineEventProps): React.ReactElement {
     const { company, position, dates } = props;
     return (
         <div className='TimelineEvent'>
@@ -28,7 +30,7 @@ type TimelineProps = {
 const defaultProps: TimelineProps = {
     children: undefined
 };
-function Index(props: TimelineProps) {
+function Timeline(props: TimelineProps): React.ReactElement {
     const { children } = props;
     return (
         <div className='Timeline'>
@@ -38,6 +40,6 @@ function Index(props: TimelineProps) {
         </div>
     );
 }
-Index.defaultProps = defaultProps;
+Timeline.defaultProps = defaultProps;
 
-export default Index;
+export default Timeline;

@@ -1,12 +1,14 @@
 import React from 'react';
+
 import { FaLinkedinIn, FaGithub, FaMailBulk, FaPhoneAlt } from 'react-icons/fa';
 import { IoNewspaperOutline } from 'react-icons/io5';
-import CenterGrid, { GridItem } from '../component/CenterGrid';
-import Section from '../component/Section';
-import Paragraph from '../text/Paragraph';
-import SocialLink from '../component/SocialLink';
 
-export default function Contact() {
+import CenterGrid, { GridItem } from '../component/center-grid';
+import Section from '../component/section';
+import SocialLink from '../component/social-link';
+import Paragraph from '../component/text/paragraph';
+
+export default function Contact(): React.ReactElement {
     return (
         <Section id='Contact' heading='Contact'>
             <center>

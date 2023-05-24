@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Box } from '@mui/material';
 import { Color } from 'react-color';
 
@@ -11,7 +12,7 @@ const defaultProps = {
     colour: 'inherit'
 };
 
-function StyledText(props: StyledTextProps) {
+function StyledText(props: StyledTextProps): React.ReactElement {
     const { bold, colour = defaultProps.colour, children } = props;
 
     return (
