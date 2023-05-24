@@ -8,20 +8,23 @@ type ProjectCardProps = {
     name: string;
     description: string;
     image: string;
-    url: string;
+    url?: string;
+    repo: string
 };
 
-export default function Index(props: ProjectCardProps) {
-    const { name, description, image, url } = props;
+export default function ProjectCard({ name, description, image, url, repo }: ProjectCardProps) {
     const { palette } = useTheme();
+
+    const openUrl = (openingUrl: string) => {
+        const tab = window.open(openingUrl, '_blank');
+        if (tab != null) tab.focus();
+    }
+
     return (
         <GridItem xs={11} sm={6} md={4} lg={3}>
             <Paper
                 className='ProjectCard'
-                onClick={() => {
-                    const tab = window.open(url, '_blank');
-                    if (tab != null) tab.focus();
-                }}
+                onClick={() => url && openUrl(url)}
             >
                 <img className='ProjectCardImage' src={image} alt={name} />
                 <div
@@ -31,8 +34,11 @@ export default function Index(props: ProjectCardProps) {
                     <Typography variant='h5'>{name}</Typography>
                     <Paragraph size='14px'>{description}</Paragraph>
                 </div>
-                <div className='ProjectCardLink'>
-                    <Paragraph colour='text.primary'>Check it Out!</Paragraph>
+                <div className='ProjectCardLink' onClickCapture={(e) => {
+                    e.stopPropagation()
+                    openUrl(repo)
+                }}>
+                    <Paragraph colour='text.primary'>Source Code</Paragraph>
                 </div>
             </Paper>
         </GridItem>
