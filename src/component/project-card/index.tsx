@@ -32,21 +32,23 @@ export default function ProjectCard({
         <GridItem xs={11} sm={6} md={4} lg={3}>
             <Paper className='ProjectCard' onClick={() => url && openUrl(url)}>
                 <img className='ProjectCardImage' src={image} alt={name} />
-                <div
-                    className='ProjectCardBody'
-                    style={{ backgroundColor: palette.background.paper }}
-                >
-                    <Typography variant='h5'>{name}</Typography>
-                    <Paragraph size='14px'>{description}</Paragraph>
-                </div>
-                <div
-                    className='ProjectCardLink'
-                    onClickCapture={(e) => {
-                        e.stopPropagation();
-                        openUrl(repo);
-                    }}
-                >
-                    <Paragraph colour='text.primary'>Source Code</Paragraph>
+                <div className='ProjectCardContent'>
+                    <div
+                        className='ProjectCardBody'
+                        style={{ backgroundColor: palette.background.paper }}
+                    >
+                        <Typography variant='h5'>{name}</Typography>
+                        <Paragraph size='14px'>{description}</Paragraph>
+                    </div>
+                    <div
+                        className='ProjectCardLink'
+                        onClickCapture={(e) => {
+                            e.stopPropagation();
+                            openUrl(repo);
+                        }}
+                    >
+                        <Paragraph colour='text.primary'>Source Code</Paragraph>
+                    </div>
                 </div>
             </Paper>
         </GridItem>
