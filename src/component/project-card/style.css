@@ -4,15 +4,15 @@
     overflow: hidden;
     color: white;
     padding: 0;
-    transition: 300ms;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4) !important;
     border-radius: 1em !important;
+    transition: 300ms;
 }
 
 .ProjectCard .ProjectCardImage {
     width: 100%;
-    transition: 300ms;
     background-color: #0dcaf0;
+    transition: 300ms;
 }
 
 .ProjectCard .ProjectCardBody {
@@ -20,7 +20,7 @@
     padding: 1em 1em 0.25em 1em;
     min-height: 150px;
     font-size: 80%;
-    transition: 300ms;
+    transition: 250ms;
 }
 
 .ProjectCard .ProjectCardLink {
@@ -31,9 +31,9 @@
     width: 100%;
     height: 50px;
     line-height: 50px;
-    transition: 250ms;
-    z-index: 1;
     background-color: #0dcaf0;
+    z-index: 1;
+    transition: 250ms;
 }
 
 .ProjectCard .ProjectCardLink p {
@@ -45,23 +45,19 @@
 
 .ProjectCard:hover {
     cursor: pointer;
-    transition: 300ms;
     transform: scale(1.05);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
 }
 
 .ProjectCard:hover .ProjectCardBody {
-    transition: 250ms;
     transform: translateY(-10px);
 }
 
 .ProjectCard:hover .ProjectCardLink {
-    transition: 250ms;
     transform: translateY(-50px);
 }
 
 .ProjectCard:hover .ProjectCardImage {
-    transition: transform 250ms;
     transform: scale(1.05)
 }
 
