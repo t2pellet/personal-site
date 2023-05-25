@@ -47,7 +47,7 @@ export default function History(): React.ReactElement {
                         company: 'Paramount Commerce',
                         position: 'Java Developer',
                         dates: 'Jan 2021 - April 2021',
-                        skills: ['SiSpring', 'SiSelenium', 'SiRedux', 'SiJava', 'SiGit', 'SiJira']
+                        skills: ['SiSpring', 'SiSelenium', 'SiRedis', 'SiJava', 'SiGit', 'SiJira']
                     },
                     {
                         company: 'MikeCrack',
@@ -56,6 +56,7 @@ export default function History(): React.ReactElement {
                         skills: ['SiMinecraft', 'SiJava', 'SiGit']
                     }
                 ]}
+                position='center'
             />
         </Section>
     );

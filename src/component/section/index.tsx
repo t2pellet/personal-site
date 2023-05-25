@@ -27,6 +27,7 @@ function Section(props: SectionProps): React.ReactElement {
                     {heading}
                 </Typography>
             )}
+            <br />
             {children}
         </div>
     );

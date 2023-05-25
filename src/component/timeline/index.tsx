@@ -13,20 +13,21 @@ type TimelineEventProps = {
     position: string;
     dates: string;
     skills?: IconKey[];
-    onHover?: () => void;
 };
+
+function TimelineGap() {
+    return <div className={styles.TimelineGap} />;
+}
 
 function TimelineEvent({
     company,
     position,
     dates,
-    skills,
-    onHover
+    skills
 }: TimelineEventProps): React.ReactElement {
     const [isHovered, setIsHovered] = useState(false);
 
     const onContentHovered = (hovered: boolean) => {
-        if (hovered && onHover) onHover();
         setIsHovered(hovered);
     };
 
@@ -67,30 +68,74 @@ function TimelineEvent({
 
 type TimelineProps = {
     events: Omit<TimelineEventProps, 'onHover'>[];
+    type?: 'right' | 'left' | 'mixed';
+    position?: 'left' | 'right' | 'center';
 };
-function Timeline({ events }: TimelineProps): React.ReactElement {
-    const children = useMemo(
-        () =>
-            events.map(({ company, position, dates, skills }, index) => {
-                const key = `timeline-event-${index}`;
-                return (
-                    <TimelineEvent
-                        key={key}
-                        company={company}
-                        position={position}
-                        dates={dates}
-                        skills={skills}
-                    />
-                );
-            }),
-        [events]
-    );
+function Timeline({ events, position = 'left' }: TimelineProps): React.ReactElement {
+    const [leftChildren, rightChildren] = useMemo(() => {
+        const leftChildren = [];
+        const rightChildren = [];
 
+        const getComponent = (
+            { company, position, dates, skills }: Omit<TimelineEventProps, 'onHover'>,
+            index: number
+        ) => {
+            const key = `timeline-event-${company}-${index}`;
+            return (
+                <TimelineEvent
+                    key={key}
+                    company={company}
+                    position={position}
+                    dates={dates}
+                    skills={skills}
+                    index={index}
+                />
+            );
+        };
+
+        if (position === 'center') {
+            events.forEach((event, index) => {
+                const isLeft = index % 2 == 0;
+                const component = getComponent(event, index);
+                if (isLeft) {
+                    leftChildren.push(component);
+                    rightChildren.push(<TimelineGap />);
+                } else {
+                    rightChildren.push(component);
+                    leftChildren.push(<TimelineGap />);
+                }
+            });
+        } else if (position === 'right') {
+            events.forEach((event, index) => {
+                leftChildren.push(getComponent(event, index));
+            });
+        } else {
+            events.forEach((event, index) => {
+                rightChildren.push(getComponent(event, index));
+            });
+        }
+
+        return [leftChildren, rightChildren];
+    }, [events, position]);
+
+    const timelineClasses = classNames(styles.TimelineContainer, {
+        [styles.right]: position === 'right',
+        [styles.center]: position === 'center'
+    });
     return (
-        <div className={styles.Timeline}>
-            <figure className={classNames(styles.TimelineEdge, styles.TimelineTop)} />
-            {children}
-            <figure className={classNames(styles.TimelineEdge, styles.TimelineBottom)} />
+        <div className={timelineClasses}>
+            {position != 'left' && (
+                <div className={classNames(styles.TimelineEvents, styles.left)}>{leftChildren}</div>
+            )}
+            <div className={styles.Timeline}>
+                <figure className={classNames(styles.TimelineEdge, styles.TimelineTop)} />
+                <figure className={classNames(styles.TimelineEdge, styles.TimelineBottom)} />
+            </div>
+            {position != 'right' && (
+                <div className={classNames(styles.TimelineEvents, styles.right)}>
+                    {rightChildren}
+                </div>
+            )}
         </div>
     );
 }
