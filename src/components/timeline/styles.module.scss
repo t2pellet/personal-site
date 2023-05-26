@@ -1,34 +1,4 @@
-$gap: 4em;
-$width: 1em;
-$figure-offset: calc(-1 * ($gap + $width + 0.5em));
-
-.Timeline {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    position: relative;
-    background: white;
-    padding-top: 5em;
-    padding-bottom: 5em;
-    width: $width;
-
-    .TimelineEdge {
-        background: white;
-        border-radius: 50%;
-        width: 3em;
-        height: 3em;
-
-        &.TimelineTop {
-            margin-top: -6.5em;
-        }
-
-        &.TimelineBottom {
-            margin-bottom: -6.5em;
-        }
-    }
-}
+@import './tokens';
 
 .TimelineContainer {
     position: relative;
@@ -36,141 +6,13 @@ $figure-offset: calc(-1 * ($gap + $width + 0.5em));
     gap: $gap;
     width: 100%;
 
-    .TimelineEvents {
-        display: flex;
-        flex-direction: column;
-        margin-top: $gap;
-        margin-bottom: $gap;
-        gap: 2em;
-        width: 50%;
-
-        &.left {
-            align-items: flex-end;
-            text-align: right;
-
-            .TimelinePoint {
-                right: $figure-offset
-            }
-
-            .TimelineLine {
-                right: $figure-offset;
-            }
-
-            .TimelineHiddenContent {
-                right: 1rem;
-                .TimelineSkills {
-                    justify-content: right;
-                }
-            }
-        }
-
-        &.right {
-            .TimelinePoint {
-                left: $figure-offset;
-            }
-
-            .TimelineLine {
-                left: $figure-offset;
-            }
-        }
-    }
-
     &.right {
         justify-content: flex-end;
     }
 
     &.center {
         justify-content: center;
-
-        .TimelineEvents {
-            gap: 0;
-
-            .TimelineEvent:hover .TimelineContent {
-                margin-bottom: -70px;
-            }
-        }
     }
 }
 
-.TimelineGap {
-    height: 130px;
-}
 
-.TimelineEvent {
-    position: relative;
-    transition: 250ms;
-
-    .TimelineContent {
-        position: relative;
-        border-radius: 1rem;
-        padding: 1rem;
-
-        transition: 250ms;
-        max-width: fit-content;
-        height: 130px;
-        overflow: hidden;
-
-        strong {
-            color: #b2c2e2;
-        }
-
-        .TimelineHiddenContent {
-            position: absolute;
-            margin-top: 1em;
-
-            .TimelineSkills {
-                display: flex;
-                flex-direction: row;
-                gap: 1rem;
-            }
-        }
-    }
-
-    &.hovered {
-        .TimelineContent {
-            height: 200px;
-            .TimelineHiddenContent {
-                position: relative;
-                right: 0;
-            }
-        }
-    }
-
-    @media (max-width: 425px) {
-        .TimelineContent {
-            height: auto;
-            text-overflow: ellipsis;
-
-            .TimelineSkills {
-                flex-shrink: 0;
-            }
-        }
-
-        &.hovered .TimelineContent {
-            height: auto;
-        }
-    }
-}
-
-.TimelinePoint {
-    position: absolute;
-    margin: 0;
-    z-index: 1;
-
-    background: #2c3034;
-    border: 5px solid white;
-    border-radius: 50%;
-    width: 2em;
-    height: 2em;
-}
-
-.TimelineLine {
-    position: absolute;
-    transform: translateY(0.75em);
-    margin: 0;
-
-    border: 3px solid white;
-    width: 8em;
-    border-radius: 1em;
-    z-index: -1;
-}

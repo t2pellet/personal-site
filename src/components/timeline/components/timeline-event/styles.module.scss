@@ -1,0 +1,109 @@
+@import '../../tokens';
+$figure-offset: calc(-1 * ($gap + $timeline-width + 0.5em));
+$spacing: 1em;
+
+.TimelineEvent {
+  position: relative;
+  transition: $transition;
+
+  .TimelineContent {
+    position: relative;
+    border-radius: $spacing;
+    padding: $spacing;
+
+    transition: $transition;
+    max-width: fit-content;
+    height: $entry-height;
+    overflow: hidden;
+
+    strong {
+      color: #b2c2e2;
+    }
+
+    .TimelineHiddenContent {
+      position: absolute;
+      margin-top: $spacing;
+
+      .TimelineSkills {
+        display: flex;
+        flex-direction: row;
+        gap: $spacing;
+      }
+    }
+  }
+
+  &.hovered {
+    .TimelineContent {
+      height: $entry-full-height;
+      .TimelineHiddenContent {
+        position: relative;
+        right: 0;
+      }
+    }
+  }
+
+  &.left {
+    .TimelinePoint {
+      right: $figure-offset
+    }
+
+    .TimelineLine {
+      right: $figure-offset;
+    }
+
+    .TimelineHiddenContent {
+      right: $spacing;
+      .TimelineSkills {
+        justify-content: right;
+      }
+    }
+  }
+
+  &.right {
+    .TimelinePoint {
+      left: $figure-offset;
+    }
+
+    .TimelineLine {
+      left: $figure-offset;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .TimelineContent {
+      height: auto;
+      text-overflow: ellipsis;
+
+      .TimelineSkills {
+        flex-shrink: 0;
+      }
+    }
+
+    &.hovered .TimelineContent {
+      height: auto;
+    }
+  }
+}
+
+.TimelinePoint {
+  position: absolute;
+  margin: 0;
+  z-index: 1;
+
+  background: #2c3034;
+  border: 5px solid white;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+}
+
+.TimelineLine {
+  position: absolute;
+  transform: translateY(0.75em);
+  margin: 0;
+
+  border: 3px solid white;
+  width: 8em;
+  border-radius: $spacing;
+  z-index: -1;
+}

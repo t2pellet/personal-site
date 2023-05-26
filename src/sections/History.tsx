@@ -56,7 +56,7 @@ export default function History(): React.ReactElement {
                         skills: ['SiMinecraft', 'SiJava', 'SiGit']
                     }
                 ]}
-                position='center'
+                type='center'
             />
         </Section>
     );
