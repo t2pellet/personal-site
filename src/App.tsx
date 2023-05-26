@@ -1,11 +1,11 @@
 import React from 'react';
 
 import './App.css';
-import NavBar, { NavItem } from './component/nav-bar';
-import AboutMe from './section/AboutMe';
-import Contact from './section/Contact';
-import History from './section/History';
-import Projects from './section/Projects';
+import NavBar, { NavItem } from './components/nav-bar';
+import AboutMe from './sections/AboutMe';
+import Contact from './sections/Contact';
+import History from './sections/History';
+import Projects from './sections/Projects';
 
 const navItems: NavItem[] = [
     { name: 'About Me', id: 'About' },

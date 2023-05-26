@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Section from '../component/section';
-import Timeline from '../component/timeline';
+import Section from '../components/section';
+import Timeline from '../components/timeline';
 
 export default function History(): React.ReactElement {
     return (

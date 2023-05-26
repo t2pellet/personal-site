@@ -84,6 +84,10 @@ $figure-offset: calc(-1 * ($gap + $width + 0.5em));
 
         .TimelineEvents {
             gap: 0;
+
+            .TimelineEvent:hover .TimelineContent {
+                margin-bottom: -70px;
+            }
         }
     }
 }
@@ -125,7 +129,6 @@ $figure-offset: calc(-1 * ($gap + $width + 0.5em));
     &.hovered {
         .TimelineContent {
             height: 200px;
-            margin-bottom: -70px;
             .TimelineHiddenContent {
                 position: relative;
                 right: 0;
@@ -136,6 +139,7 @@ $figure-offset: calc(-1 * ($gap + $width + 0.5em));
     @media (max-width: 425px) {
         .TimelineContent {
             height: auto;
+            text-overflow: ellipsis;
 
             .TimelineSkills {
                 flex-shrink: 0;

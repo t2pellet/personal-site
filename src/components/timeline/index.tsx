@@ -3,6 +3,7 @@ import React, { useMemo, useState } from 'react';
 import { Paper, Typography } from '@mui/material';
 import classNames from 'classnames';
 
+import useWindowSize from '../../hooks/use-window-size';
 import DynamicIcon, { IconKey } from '../dynamic-icon';
 import StyledText from '../text/styled-text';
 
@@ -14,6 +15,8 @@ type TimelineEventProps = {
     dates: string;
     skills?: IconKey[];
 };
+
+const FORCE_LEFT_WIDTH = 950;
 
 function TimelineGap() {
     return <div className={styles.TimelineGap} />;
@@ -44,10 +47,16 @@ function TimelineEvent({
                 onMouseEnter={() => onContentHovered(true)}
                 onMouseLeave={() => onContentHovered(false)}
             >
-                <Typography variant='h4' color='#0dcaf0' marginBottom={0}>
+                <Typography
+                    variant='h4'
+                    color='#0dcaf0'
+                    marginBottom={0}
+                    whiteSpace='nowrap'
+                    textOverflow='ellipsis'
+                >
                     {company}
                 </Typography>
-                <Typography variant='h5' color='white'>
+                <Typography variant='h5' color='white' whiteSpace='nowrap' textOverflow='ellipsis'>
                     {position}
                 </Typography>
                 <StyledText bold colour='text.secondary'>
@@ -72,12 +81,19 @@ type TimelineProps = {
     position?: 'left' | 'right' | 'center';
 };
 function Timeline({ events, position = 'left' }: TimelineProps): React.ReactElement {
+    const { width } = useWindowSize();
+    const sizeBoundPosition = width <= FORCE_LEFT_WIDTH ? 'left' : position;
     const [leftChildren, rightChildren] = useMemo(() => {
         const leftChildren = [];
         const rightChildren = [];
 
         const getComponent = (
-            { company, position, dates, skills }: Omit<TimelineEventProps, 'onHover'>,
+            {
+                company,
+                position: companyPosition,
+                dates,
+                skills
+            }: Omit<TimelineEventProps, 'onHover'>,
             index: number
         ) => {
             const key = `timeline-event-${company}-${index}`;
@@ -85,7 +101,7 @@ function Timeline({ events, position = 'left' }: TimelineProps): React.ReactElem
                 <TimelineEvent
                     key={key}
                     company={company}
-                    position={position}
+                    position={companyPosition}
                     dates={dates}
                     skills={skills}
                     index={index}
@@ -93,7 +109,7 @@ function Timeline({ events, position = 'left' }: TimelineProps): React.ReactElem
             );
         };
 
-        if (position === 'center') {
+        if (sizeBoundPosition === 'center') {
             events.forEach((event, index) => {
                 const isLeft = index % 2 == 0;
                 const component = getComponent(event, index);
@@ -105,7 +121,7 @@ function Timeline({ events, position = 'left' }: TimelineProps): React.ReactElem
                     leftChildren.push(<TimelineGap />);
                 }
             });
-        } else if (position === 'right') {
+        } else if (sizeBoundPosition === 'right') {
             events.forEach((event, index) => {
                 leftChildren.push(getComponent(event, index));
             });
@@ -116,22 +132,22 @@ function Timeline({ events, position = 'left' }: TimelineProps): React.ReactElem
         }
 
         return [leftChildren, rightChildren];
-    }, [events, position]);
+    }, [events, sizeBoundPosition]);
 
     const timelineClasses = classNames(styles.TimelineContainer, {
-        [styles.right]: position === 'right',
-        [styles.center]: position === 'center'
+        [styles.right]: sizeBoundPosition === 'right',
+        [styles.center]: sizeBoundPosition === 'center'
     });
     return (
         <div className={timelineClasses}>
-            {position != 'left' && (
+            {sizeBoundPosition != 'left' && (
                 <div className={classNames(styles.TimelineEvents, styles.left)}>{leftChildren}</div>
             )}
             <div className={styles.Timeline}>
                 <figure className={classNames(styles.TimelineEdge, styles.TimelineTop)} />
                 <figure className={classNames(styles.TimelineEdge, styles.TimelineBottom)} />
             </div>
-            {position != 'right' && (
+            {sizeBoundPosition != 'right' && (
                 <div className={classNames(styles.TimelineEvents, styles.right)}>
                     {rightChildren}
                 </div>

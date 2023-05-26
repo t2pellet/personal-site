@@ -1,8 +1,8 @@
 import React from 'react';
 
-import CenterGrid from '../component/center-grid';
-import ProjectCard from '../component/project-card';
-import Section from '../component/section';
+import CenterGrid from '../components/center-grid';
+import ProjectCard from '../components/project-card';
+import Section from '../components/section';
 
 function Projects(): React.ReactElement {
     return (

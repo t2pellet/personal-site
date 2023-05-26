@@ -2,10 +2,10 @@ import React from 'react';
 
 import { Typography } from '@mui/material';
 
-import CenterGrid, { GridItem } from '../component/center-grid';
-import Section from '../component/section';
-import Paragraph from '../component/text/paragraph';
-import StyledText from '../component/text/styled-text';
+import CenterGrid, { GridItem } from '../components/center-grid';
+import Section from '../components/section';
+import Paragraph from '../components/text/paragraph';
+import StyledText from '../components/text/styled-text';
 
 export default function AboutMe(): React.ReactElement {
     return (
