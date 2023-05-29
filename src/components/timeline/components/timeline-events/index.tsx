@@ -2,9 +2,9 @@ import React from 'react';
 
 import classNames from 'classnames';
 
-import TimelineEvent from '@/components/timeline/components/timeline-event';
-import { TimelineEventData, TimelineSide } from '@/components/timeline/types';
+import { TimelineEventData, TimelineSide } from '../../types';
 
+import TimelineEvent from './components/timeline-event';
 import styles from './styles.module.scss';
 
 type Props = {

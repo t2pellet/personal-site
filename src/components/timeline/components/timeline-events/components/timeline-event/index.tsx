@@ -42,16 +42,10 @@ function TimelineEvent({
                 onMouseLeave={() => onContentHovered(false)}
                 onMouseDown={() => onContentHovered(!isHovered)}
             >
-                <Typography
-                    variant='h4'
-                    color='#0dcaf0'
-                    marginBottom={0}
-                    whiteSpace='nowrap'
-                    textOverflow='ellipsis'
-                >
+                <Typography variant='h4' color='#0dcaf0' marginBottom={0}>
                     {company}
                 </Typography>
-                <Typography variant='h5' color='white' whiteSpace='nowrap' textOverflow='ellipsis'>
+                <Typography variant='h5' color='white'>
                     {position}
                 </Typography>
                 <StyledText bold colour='text.secondary'>
