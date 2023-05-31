@@ -7,22 +7,21 @@ $entry-centred-full-height: calc($entry-full-height + $gap-sm);
   margin-top: $gap;
   margin-bottom: $gap;
   gap: $gap-sm;
-  width: 50%;
 
   &.left {
     align-items: flex-end;
     text-align: right;
-    width: initial;
   }
 
   &.right {
-    width: initial;
   }
 
   &.centered {
     display: grid;
     grid-template-rows: $entry-centred-full-height;
+    width: 50%;
     gap: 0;
+
 
     > div {
       height: $entry-centred-full-height;
