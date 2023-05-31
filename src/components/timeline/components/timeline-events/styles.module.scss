@@ -12,9 +12,11 @@ $entry-centred-full-height: calc($entry-full-height + $gap-sm);
   &.left {
     align-items: flex-end;
     text-align: right;
+    width: initial;
   }
 
   &.right {
+    width: initial;
   }
 
   &.centered {
