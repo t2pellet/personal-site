@@ -1,4 +1,4 @@
-import { IconKey } from '@/components/dynamic-icon';
+import { IconType } from 'react-icons';
 
 export type TimelineType = 'left' | 'right' | 'center';
 
@@ -8,5 +8,5 @@ export type TimelineEventData = {
     company: string;
     position: string;
     dates: string;
-    skills?: IconKey[];
+    skills?: IconType[];
 };

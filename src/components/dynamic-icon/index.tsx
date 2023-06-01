@@ -1,21 +1,13 @@
 import React from 'react';
 
 import { Tooltip } from '@mui/material';
-import * as DiIcons from 'react-icons/di';
-import * as SiIcons from 'react-icons/si';
-import * as TbIcons from 'react-icons/tb';
-
-const Icons = { ...DiIcons, ...SiIcons, ...TbIcons };
-export type IconKey = keyof typeof Icons;
+import { IconType } from 'react-icons';
 
 type Props = {
-    type: IconKey;
+    type: IconType;
 };
 
 export default function DynamicIcon({ type }: Props): React.ReactElement {
-    // eslint-disable-next-line import/namespace
-    const IconComponent = Icons[type];
-
     const getSliceIndex = (str: string): number => {
         const matches = str.match(/[A-Z]/g);
         if (matches) {
@@ -25,13 +17,10 @@ export default function DynamicIcon({ type }: Props): React.ReactElement {
         return 2;
     };
 
-    const name = type.substr(getSliceIndex(type));
-    if (IconComponent)
-        return (
-            <Tooltip title={name}>
-                <div>
-                    <IconComponent size='2rem' color='#0dcaf0' />
-                </div>
-            </Tooltip>
-        );
+    const name = type.name.substring(getSliceIndex(type.name));
+    return (
+        <Tooltip title={name}>
+            <div>{type({ size: '2rem', color: '#0dcaf0' })}</div>
+        </Tooltip>
+    );
 }

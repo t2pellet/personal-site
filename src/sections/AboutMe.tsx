@@ -33,13 +33,13 @@ export default function AboutMe(): React.ReactElement {
                         {` I'm Tenzin, a 4th year Computer Science student @ UWaterloo`}
                     </Paragraph>
                     <Paragraph>
-                        {`I love developing tangible, user-facing features, and feel I'm at my best when I can see my work, and the products I'm working on have real customer impact`}
+                        {`I love developing tangible, user-facing features, and feel I'm at my best when I can see my work, and the products I'm working on have real customer impact.`}
                     </Paragraph>
                     <Paragraph>
-                        {`I've worked with TypeScript, JavaScript and React, as well as Java, Spring and C#, Unity`}
+                        {`I excel with TypeScript, JavaScript and React, but I've also worked with Java and Spring, C# and Unity.`}
                     </Paragraph>
                     <Paragraph>
-                        {`But above all, I'm still trying to learn and be challenged by new tools, frameworks and roles`}
+                        {`Above all, I'm at my best when I'm learning and being challenged by new tools, frameworks and roles.`}
                     </Paragraph>
                     <Paragraph>
                         {`Outside of programming, I'm learning to play the guitar, and enjoy music, photography, board games and D&D!`}
