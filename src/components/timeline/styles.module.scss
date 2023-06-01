@@ -5,6 +5,8 @@
     display: flex;
     gap: $gap;
     width: 100%;
+    margin-bottom: $gap-sm;
+    margin-top: $gap-sm;
 
     &.right {
         justify-content: flex-end;

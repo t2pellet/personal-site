@@ -20,7 +20,7 @@
     padding: 1em 1em 0.25em 1em;
     min-height: 150px;
     font-size: 80%;
-    transition: 250ms;
+    transition: 300ms;
 }
 
 .ProjectCard .ProjectCardLink {
@@ -34,6 +34,7 @@
     background-color: #0dcaf0;
     z-index: 1;
     transition: 250ms;
+    transition-delay: 100ms;
 }
 
 .ProjectCard .ProjectCardLink p {

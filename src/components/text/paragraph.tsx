@@ -5,17 +5,18 @@ import { Typography } from '@mui/material';
 type ParagraphProps = PropsWithChildren & {
     colour?: string;
     size?: string;
+    align?: 'inherit' | 'left' | 'center' | 'right' | 'justify';
 };
 
 const defaultProps = {
     colour: 'text.secondary',
-    size: '16px'
+    size: '16px',
+    align: 'inherit'
 };
 
-function Paragraph(props: ParagraphProps): React.ReactElement {
-    const { children, colour, size } = props;
+function Paragraph({ children, colour, size, align }: ParagraphProps): React.ReactElement {
     return (
-        <Typography variant='body1' paragraph color={colour} fontSize={size}>
+        <Typography variant='body1' paragraph color={colour} fontSize={size} textAlign={align}>
             {children}
         </Typography>
     );

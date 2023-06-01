@@ -21,7 +21,7 @@ function Section(props: SectionProps): React.ReactElement {
                     justifyContent='center'
                     justifySelf='center'
                     textAlign='center'
-                    marginBottom='32px'
+                    marginBottom='1rem'
                     variant='h2'
                 >
                     {heading}
