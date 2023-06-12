@@ -40,7 +40,7 @@ $spacing: 1em;
     }
   }
 
-  &.hovered {
+  &:hover {
     .TimelineContent {
       height: $entry-full-height;
       .TimelineHiddenContent {
@@ -88,11 +88,13 @@ $spacing: 1em;
       }
 
       .TimelineSkills {
+        max-width: 100%;
         flex-shrink: 0;
+        flex-wrap: wrap;
       }
     }
 
-    &.hovered .TimelineContent {
+    &:hover .TimelineContent {
       height: auto;
     }
   }
