@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Typography } from '@mui/material';
+import { Link, Typography } from '@mui/material';
+
+import KofiButton from '@/components/kofi-button';
 
 import CenterGrid, { GridItem } from '../components/center-grid';
 import Section from '../components/section';
@@ -39,10 +41,17 @@ export default function AboutMe(): React.ReactElement {
                         {`I excel with TypeScript, JavaScript and React, but I've also worked with Java and Spring, C# and Unity.`}
                     </Paragraph>
                     <Paragraph>
-                        {`Above all, I'm at my best when I'm learning and being challenged by new tools, frameworks and roles.`}
+                        {`Outside of programming, I'm learning to play the guitar, and enjoy music, photography, board games and D&D!`}
                     </Paragraph>
                     <Paragraph>
-                        {`Outside of programming, I'm learning to play the guitar, and enjoy music, photography, board games and D&D!`}
+                        {`If you like some of the work I've done (like Metalworks or Strawgolem), feel free to`}
+                        <KofiButton id='G2G7PTE10' text='Support me' />
+                        {` or `}
+                        <StyledText bold>
+                            <Link href='doc/resume.pdf' target='_blank'>
+                                hire me
+                            </Link>
+                        </StyledText>
                     </Paragraph>
                 </GridItem>
             </CenterGrid>
