@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Box } from '@mui/material';
+import KofiButton from 'kofi-btn-react';
 import { FaLinkedinIn, FaGithub, FaMailBulk, FaPhoneAlt } from 'react-icons/fa';
 import { IoNewspaperOutline } from 'react-icons/io5';
 
@@ -11,6 +13,10 @@ import Paragraph from '../components/text/paragraph';
 export default function Contact(): React.ReactElement {
     return (
         <Section id='Contact' heading='Contact'>
+            <Box display='flex' justifyContent='center' marginTop='-8px'>
+                <KofiButton user='t2pellet' label='Support me' />
+            </Box>
+            <br />
             <Paragraph align='center'>{`I'd love to hear from you! You can find my resumé and socials below`}</Paragraph>
             <br />
             <CenterGrid columnSpacing={0}>
@@ -38,6 +44,7 @@ export default function Contact(): React.ReactElement {
                     <SocialLink name='Resumé' icon={IoNewspaperOutline} url='/doc/resume.pdf' />
                 </GridItem>
             </CenterGrid>
+            <br />
         </Section>
     );
 }

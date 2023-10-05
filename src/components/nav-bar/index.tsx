@@ -17,14 +17,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import './styles.css';
 import Scrollspy from 'react-scrollspy';
 
-const scrollTo = async (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-        const scrollOffset = -3 * (window.innerWidth / 100) - 60;
-        const scrollPosition = element.offsetTop;
-        await window.scrollTo({ behavior: 'smooth', top: scrollPosition + scrollOffset });
-    }
-};
+import scrollTo from '@/util/scroll';
 
 export type NavItem = {
     id: string;

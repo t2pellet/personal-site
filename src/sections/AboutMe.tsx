@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { Link, Typography } from '@mui/material';
+import { ButtonBase, Link, Typography } from '@mui/material';
+import KofiButton from 'kofi-btn-react';
 
-import KofiButton from '@/components/kofi-button';
+import scrollTo from '@/util/scroll';
 
 import CenterGrid, { GridItem } from '../components/center-grid';
 import Section from '../components/section';
@@ -44,14 +45,13 @@ export default function AboutMe(): React.ReactElement {
                         {`Outside of programming, I'm learning to play the guitar, and enjoy music, photography, board games and D&D!`}
                     </Paragraph>
                     <Paragraph>
-                        {`If you like some of the work I've done (like Metalworks or Strawgolem), feel free to`}
-                        <KofiButton id='G2G7PTE10' text='Support me' />
-                        {` or `}
-                        <StyledText bold>
-                            <Link href='doc/resume.pdf' target='_blank'>
-                                hire me
-                            </Link>
-                        </StyledText>
+                        {`If you like some of the work I've done (like Metalworks or Strawgolem), feel free to `}
+                        <Link
+                            style={{ textDecoration: 'none', cursor: 'pointer' }}
+                            onClick={() => scrollTo('Contact')}
+                        >
+                            <StyledText bold>reach out</StyledText>
+                        </Link>
                     </Paragraph>
                 </GridItem>
             </CenterGrid>
