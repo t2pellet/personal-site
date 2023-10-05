@@ -1,6 +1,8 @@
 import React from 'react';
 
 import './App.css';
+import { KofiWidget } from 'kofi-btn-react';
+
 import NavBar, { NavItem } from './components/nav-bar';
 import AboutMe from './sections/AboutMe';
 import Contact from './sections/Contact';
@@ -24,6 +26,7 @@ function App(): React.ReactElement {
                 <History />
                 <Contact />
             </div>
+            <KofiWidget label='Support me' user='t2pellet' />
         </div>
     );
 }
