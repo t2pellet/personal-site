@@ -32,16 +32,16 @@ export default function Particles() {
           move: isLight
             ? {
                 speed: {
-                  min: -0.75,
-                  max: 0.75,
+                  min: -0.5,
+                  max: 0.5,
                 },
               }
             : undefined,
           wobble: isLight
             ? {
                 speed: {
-                  min: -0.25,
-                  max: 0.25,
+                  min: -0.1,
+                  max: 0.1,
                 },
               }
             : undefined,
