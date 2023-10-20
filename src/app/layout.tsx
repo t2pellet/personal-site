@@ -1,7 +1,6 @@
 import React from 'react';
 import './globals.css';
-import NavBar from '@/components/NavBar';
-import { ThemeProvider } from '@/context/ThemeContext';
+import NavBar from '@/components/nav/bar/NavBar';
 import Script from 'next/script';
 import Particles from '@/components/Particles';
 

@@ -1,10 +1,10 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import ThemeToggle from '@/components/ThemeToggle';
-import NavBarDropdown from '@/components/NavBarDropdown';
+import React from 'react';
+import ThemeToggle from '@/components/toggle/ThemeToggle';
+import NavBarDropdown from '@/components/nav/bar/NavBarDropdown';
 import { SectionEnum, sections } from '@/types';
 import classNames from 'classnames';
-import NavLink, { NavLinkProps } from '@/components/NavLink';
-import NavBarLink from '@/components/NavBarLink';
+import NavBarLink from '@/components/nav/bar/NavBarLink';
+import ParticleToggle from '@/components/toggle/ParticleToggle';
 
 export default function NavBar() {
   const NavItems = () => {
@@ -12,7 +12,7 @@ export default function NavBar() {
       const sectionEnum = section as SectionEnum;
       return (
         <li key={`nav-link-${section}`}>
-          <NavBarLink className='btn btn-ghost btn-sm' section={sectionEnum} />
+          <NavBarLink section={sectionEnum} />
         </li>
       );
     });
@@ -47,7 +47,8 @@ export default function NavBar() {
         </ul>
         <NavRoot mobile />
       </div>
-      <div className='navbar-end'>
+      <div className='navbar-end space-x-2 md:space-x-4'>
+        <ParticleToggle />
         <ThemeToggle />
       </div>
     </div>

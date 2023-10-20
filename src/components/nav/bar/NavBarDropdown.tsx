@@ -3,7 +3,7 @@
 import React, { PropsWithChildren, useRef } from 'react';
 import { IconMenu2 } from '@tabler/icons-react';
 
-// Made this a client component cause it can't close on click otherwise
+// Made this a client component 'cause it can't close on click otherwise
 export default function NavBarDropdown({ children }: PropsWithChildren) {
   // Using ref instead of state for this because I don't want re-renders
   const isOpen = useRef<boolean>(false);
@@ -11,7 +11,7 @@ export default function NavBarDropdown({ children }: PropsWithChildren) {
   const toggle = useRef<HTMLLabelElement>(null);
 
   return (
-    <div className='dropdown dropdown-hover'>
+    <div className='dropdown static md:dropdown-hover'>
       <label
         tabIndex={0}
         className='btn btn-circle btn-ghost md:hidden'
@@ -26,7 +26,10 @@ export default function NavBarDropdown({ children }: PropsWithChildren) {
       >
         <IconMenu2 />
       </label>
-      <ul tabIndex={0} className='menu dropdown-content menu-sm'>
+      <ul
+        tabIndex={0}
+        className='menu dropdown-content menu-md absolute left-0 w-screen bg-base-100 shadow-sm'
+      >
         {children}
       </ul>
     </div>

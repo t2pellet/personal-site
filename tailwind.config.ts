@@ -12,7 +12,7 @@ const config: Config = {
   },
   plugins: [daisyUI],
   daisyui: {
-    themes: ['light', 'dracula'],
+    themes: ['cmyk', 'dracula'],
     darkTheme: 'dracula',
   },
 };

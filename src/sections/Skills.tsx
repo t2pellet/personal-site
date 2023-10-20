@@ -2,8 +2,9 @@ import React from 'react';
 import PageSection from '@/components/PageSection';
 import { SectionEnum } from '@/types';
 import SkillIcon, { SkillIconProps } from '@/components/SkillIcon';
-import NavLink from '@/components/NavLink';
+import NavLink from '@/components/nav/NavLink';
 import ContentDiv from '@/components/ContentDiv';
+import KeepReading from '@/components/KeepReading';
 
 const SKILLS: SkillIconProps[] = [
   { icon: 'IconBrandTypescript', name: 'TypeScript' },
@@ -17,7 +18,7 @@ const SKILLS: SkillIconProps[] = [
 export default function Skills() {
   return (
     <PageSection section={SectionEnum.SKILLS}>
-      <ContentDiv className='mx-auto w-2/4'>
+      <ContentDiv className='mx-auto xl:w-2/4'>
         <p className='text-center'>
           {`Below are some of my skills! I'm always learning new things, so this
         might be a bit out of date ;)\n\n`}
@@ -32,11 +33,15 @@ export default function Skills() {
           {` I've used them in!`}
         </p>
       </ContentDiv>
-      <div className='flex place-content-center space-x-4 py-8'>
+      <div className='flex flex-wrap place-content-center gap-4 py-8'>
         {SKILLS.map((skill) => (
           <SkillIcon key={`skill-${skill}`} {...skill} />
         ))}
       </div>
+      <KeepReading
+        text={`Wanna know where I used 'em?`}
+        section={SectionEnum.PROJECTS}
+      />
     </PageSection>
   );
 }

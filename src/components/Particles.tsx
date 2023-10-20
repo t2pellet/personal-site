@@ -5,20 +5,24 @@ import TsParticles from 'react-tsparticles';
 import { Engine } from 'tsparticles-engine';
 import { loadStarsPreset } from 'tsparticles-preset-stars';
 import { loadSnowPreset } from 'tsparticles-preset-snow';
-import useTheme from '@/hooks/useTheme';
+import useThemeColors from '@/hooks/useThemeColors';
+import { ThemeProvider } from '@/context/ThemeContext';
+import useLocalStorage from 'use-local-storage';
 
-export default function Particles() {
+export function RawParticles() {
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadStarsPreset(engine);
     await loadSnowPreset(engine);
   }, []);
-  const theme = useTheme();
+  const theme = useThemeColors();
+  const [particles] = useLocalStorage('particles', true);
   const isLight = theme['color-scheme'] === 'light';
 
-  return (
+  return particles ? (
     <TsParticles
       id='particles'
       init={particlesInit}
+      className='absolute -z-10'
       options={{
         preset: isLight ? 'snow' : 'stars',
         background: {
@@ -48,5 +52,13 @@ export default function Particles() {
         },
       }}
     />
+  ) : null;
+}
+
+export default function Particles() {
+  return (
+    <ThemeProvider>
+      <RawParticles />
+    </ThemeProvider>
   );
 }

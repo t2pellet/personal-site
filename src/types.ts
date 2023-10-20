@@ -1,9 +1,22 @@
 import * as TablerIcons from '@tabler/icons-react';
-import { Icon } from '@tabler/icons-react';
-import { TablerIconsProps } from '@tabler/icons-react';
 
-export const themes = ['dracula', 'light'] as const;
+export const themes = ['dracula', 'cmyk'] as const;
 export type Theme = (typeof themes)[number];
+export type ThemeColors = {
+  'color-scheme': 'light' | 'dark';
+  primary: `#${string}`;
+  'primary-content': `#${string}`;
+  secondary: `#${string}`;
+  'secondary-content': `#${string}`;
+  accent: `#${string}`;
+  'accent-content': `#${string}`;
+  neutral: `#${string}`;
+  'neutral-content': `#${string}`;
+  'base-100': `#${string}`;
+  'base-200': `#${string}`;
+  'base-300': `#${string}`;
+  'base-content': `#${string}`;
+};
 
 export enum SectionEnum {
   ABOUT = 'about',
@@ -16,8 +29,8 @@ export enum SectionEnum {
 export const sections: Record<SectionEnum, string> = {
   about: 'About',
   skills: 'Skills',
-  work: 'Experience',
   projects: 'Projects',
+  work: 'Experience',
   school: 'Education',
   contact: 'Contact',
 };
