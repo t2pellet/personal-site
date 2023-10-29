@@ -1,0 +1,43 @@
+import React, { PropsWithChildren } from 'react';
+import { IconKey, Icons } from '@/types';
+import { TablerIconsProps } from '@tabler/icons-react';
+
+export type RawTimelineEventProps = PropsWithChildren<{
+  icon: IconKey;
+  baseHeight?: string; // must be valid tailwind height
+}>;
+
+export default function TimelineEvent({
+  children,
+  icon,
+  baseHeight,
+  ...props
+}: RawTimelineEventProps) {
+  const Icon: React.FC<TablerIconsProps> = Icons[icon];
+
+  return (
+    <div
+      className='timeline-event rounded-box relative h-fit w-64 md:w-80 lg:w-96'
+      {...props}
+    >
+      <div className='timeline-event-point absolute w-fit rounded-full border-2 border-primary bg-base-100 p-2 text-primary'>
+        {<Icon size={32} />}
+      </div>
+      <div className='timeline-event-arrow absolute top-4 h-0 w-0 border-y-[10px] border-x-secondary-content border-y-transparent' />
+      <div className='rounded-box relative h-fit w-full bg-secondary-content p-4 md:p-8'>
+        <div
+          className='timeline-event-body overflow-hidden transition-all'
+          style={
+            baseHeight
+              ? {
+                  maxHeight: baseHeight,
+                }
+              : undefined
+          }
+        >
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+}

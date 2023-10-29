@@ -2,6 +2,8 @@ import AboutMe from '@/sections/AboutMe';
 import './globals.css';
 import Skills from '@/sections/Skills';
 import Projects from '@/sections/Projects';
+import Work from '@/sections/Work';
+import School from '@/sections/School';
 
 export default function Home() {
   return (
@@ -9,6 +11,8 @@ export default function Home() {
       <AboutMe />
       <Skills />
       <Projects />
+      <Work />
+      <School />
     </main>
   );
 }
