@@ -1,7 +1,7 @@
 import React from 'react';
 import PageSection from '@/components/PageSection';
 import { SectionEnum } from '@/types';
-import ProjectCard from '@/components/ProjectCard';
+import ProjectCard from '@/components/card/ProjectCard';
 import KeepReading from '@/components/KeepReading';
 
 export default function Projects() {

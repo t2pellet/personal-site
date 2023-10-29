@@ -1,0 +1,23 @@
+.project-card {
+    .project-card-description {
+        margin-top: 1rem;
+    }
+
+    .project-card-links {
+        bottom: -5rem;
+    }
+}
+
+.project-card:hover {
+    .project-card-image {
+        transform: scale(105%);
+    }
+
+    .project-card-description {
+        margin-top: 0;
+    }
+
+    .project-card-links {
+        bottom: -1rem;
+    }
+}

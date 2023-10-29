@@ -23,7 +23,7 @@ const LINKS: LabeledIconProps[] = [
 export default function Contact() {
   return (
     <PageSection section={SectionEnum.CONTACT}>
-      <ContentDiv className='mx-auto xl:w-2/4'>
+      <ContentDiv className='mx-auto md:w-3/4 xl:w-2/4'>
         <p className='text-center'>
           Wanna get in touch? Lets do it! 🔥
           {'\n\n'}

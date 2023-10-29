@@ -1,10 +1,8 @@
-'use client';
-
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { IconBrandGithub } from '@tabler/icons-react';
-import ContentDiv from '@/components/ContentDiv';
 import Image from 'next/image';
 import classNames from 'classnames';
+import './card.css';
 
 export type ProjectCardProps = {
   name: string;
@@ -23,8 +21,6 @@ export default function ProjectCard({
   link,
   className,
 }: ProjectCardProps) {
-  const [hovered, setHovered] = useState(false);
-
   return (
     <div
       className={classNames(
@@ -32,17 +28,13 @@ export default function ProjectCard({
         'rounded-box flex h-fit w-80 shrink-0 flex-col overflow-hidden',
         'cursor-pointer bg-secondary-content',
         'transition-transform duration-300 ease-in-out hover:scale-105',
+        'project-card',
         className
       )}
-      onMouseDown={() => {
-        setHovered(!hovered);
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
     >
       <div className='overflow-hidden'>
         <Image
-          className='object-cover transition-transform duration-300 ease-in-out hover:scale-110'
+          className='project-card-image object-cover transition-transform duration-300 ease-in-out'
           src={image}
           alt={name}
           height={384}
@@ -57,10 +49,7 @@ export default function ProjectCard({
           <div
             className={classNames(
               'mb-3 flex h-20 place-content-center items-center text-center transition-all delay-100 duration-100 ease-in-out',
-              {
-                ['mt-4']: !hovered,
-                ['mt-0.5']: hovered,
-              }
+              'project-card-description'
             )}
           >
             <p>{description}</p>
@@ -68,10 +57,7 @@ export default function ProjectCard({
           <div
             className={classNames(
               'absolute flex h-12 w-full place-content-center gap-2 transition-all delay-100 duration-200 ease-in-out',
-              {
-                ['-bottom-20']: !hovered,
-                ['-bottom-4']: hovered,
-              }
+              'project-card-links'
             )}
           >
             {repository && (

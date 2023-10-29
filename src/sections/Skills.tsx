@@ -18,7 +18,7 @@ const SKILLS: LabeledIconProps[] = [
 export default function Skills() {
   return (
     <PageSection section={SectionEnum.SKILLS}>
-      <ContentDiv className='mx-auto xl:w-2/4'>
+      <ContentDiv className='mx-auto md:w-3/4 xl:w-2/4'>
         <p className='text-center'>
           {`Below are some of my skills! I'm always learning new things, so this
         might be a bit out of date ;)\n\n`}
