@@ -1,5 +1,4 @@
 import TimelineEvent, { RawTimelineEventProps } from './TimelineEvent';
-import SkillIcon, { SkillIconProps } from '@/components/SkillIcon';
 
 export type TimelineSchoolProps = Omit<
   RawTimelineEventProps,

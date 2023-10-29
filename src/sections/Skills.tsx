@@ -1,12 +1,12 @@
 import React from 'react';
 import PageSection from '@/components/PageSection';
 import { SectionEnum } from '@/types';
-import SkillIcon, { SkillIconProps } from '@/components/SkillIcon';
+import LabeledIcon, { LabeledIconProps } from '@/components/LabeledIcon';
 import NavLink from '@/components/nav/NavLink';
 import ContentDiv from '@/components/ContentDiv';
 import KeepReading from '@/components/KeepReading';
 
-const SKILLS: SkillIconProps[] = [
+const SKILLS: LabeledIconProps[] = [
   { icon: 'IconBrandTypescript', name: 'TypeScript' },
   { icon: 'IconBrandNodejs', name: 'Node.JS' },
   { icon: 'IconBrandReact', name: 'React' },
@@ -35,7 +35,7 @@ export default function Skills() {
       </ContentDiv>
       <div className='flex flex-wrap place-content-center gap-4 py-8'>
         {SKILLS.map((skill) => (
-          <SkillIcon key={`skill-${skill}`} {...skill} />
+          <LabeledIcon key={`skill-${skill}`} {...skill} />
         ))}
       </div>
       <KeepReading

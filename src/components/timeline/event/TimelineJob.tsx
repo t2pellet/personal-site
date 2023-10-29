@@ -1,5 +1,5 @@
 import TimelineEvent, { RawTimelineEventProps } from './TimelineEvent';
-import SkillIcon, { SkillIconProps } from '@/components/SkillIcon';
+import LabeledIcon, { LabeledIconProps } from '@/components/LabeledIcon';
 
 export type TimelineJobProps = Omit<
   RawTimelineEventProps,
@@ -9,7 +9,7 @@ export type TimelineJobProps = Omit<
   role: string;
   date: string;
   description: string;
-  skills: Omit<SkillIconProps, 'labelType'>[];
+  skills: Omit<LabeledIconProps, 'labelType'>[];
 };
 
 export default function TimelineJob({
@@ -29,7 +29,7 @@ export default function TimelineJob({
       <h1 className='text-center text-lg font-bold'>Skills</h1>
       <div className='flex flex-wrap place-content-center gap-2'>
         {skills.map((props) => (
-          <SkillIcon
+          <LabeledIcon
             key={`job-${title}-skill-${props.name}`}
             className='h-16 w-16'
             labelType='tooltip'

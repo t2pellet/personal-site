@@ -3,19 +3,21 @@ import { IconKey, Icons } from '@/types';
 import { TablerIconsProps } from '@tabler/icons-react';
 import classNames from 'classnames';
 
-export type SkillIconProps = HTMLProps<any> & {
+export type LabeledIconProps = HTMLProps<any> & {
   icon: IconKey;
   name: string;
   labelType?: 'text' | 'tooltip';
+  href?: string;
 };
 
-export default function SkillIcon({
+export default function LabeledIcon({
   icon,
   name,
   labelType = 'text',
+  href,
   className,
   ...props
-}: SkillIconProps) {
+}: LabeledIconProps) {
   const Icon: React.FC<TablerIconsProps> = Icons[icon];
   const classes = classNames(
     'flex h-24 w-24 cursor-pointer flex-col place-content-center transition-transform duration-200 ease-in-out hover:scale-125',
@@ -26,9 +28,15 @@ export default function SkillIcon({
   );
 
   return (
-    <div className={classes} {...props} data-tip={name}>
+    <a
+      className={classes}
+      {...props}
+      data-tip={name}
+      href={href}
+      target='_blank'
+    >
       <Icon className='mx-auto text-primary' size={48} />
       {labelType === 'text' && <span className='text-center'>{name}</span>}
-    </div>
+    </a>
   );
 }
