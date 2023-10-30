@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { HTMLProps } from 'react';
 import { IconBrandGithub } from '@tabler/icons-react';
 import Image from 'next/image';
 import classNames from 'classnames';
 import './card.css';
 
-export type ProjectCardProps = {
+export type ProjectCardProps = HTMLProps<any> & {
   name: string;
   image: string;
   description: string;
   repository?: string;
   link?: string;
-  className?: string;
 };
 
 export default function ProjectCard({
@@ -20,6 +19,7 @@ export default function ProjectCard({
   image,
   link,
   className,
+  ...props
 }: ProjectCardProps) {
   return (
     <div
@@ -31,6 +31,7 @@ export default function ProjectCard({
         'project-card',
         className
       )}
+      {...props}
     >
       <div className='overflow-hidden'>
         <Image
