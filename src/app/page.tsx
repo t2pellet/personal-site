@@ -13,6 +13,12 @@ import {
   SCHOOLS,
   SKILLS,
 } from '@/constants';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Tenzin Pelletier',
+  description: `Portfolio site of Tenzin Pelletier, 2023 UW Computer Science Graduate. Looking for new work opportunities!`,
+};
 
 export default function Home() {
   return (
