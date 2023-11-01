@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import TsParticles from 'react-tsparticles';
 import { Engine } from 'tsparticles-engine';
 import { loadStarsPreset } from 'tsparticles-preset-stars';
 import { loadSnowPreset } from 'tsparticles-preset-snow';
 import useThemeColors from '@/hooks/useThemeColors';
-import { ThemeProvider } from '@/context/ThemeContext';
+import ThemeContext, { ThemeProvider } from '@/context/ThemeContext';
 import useLocalStorage from 'use-local-storage';
 
 export function RawParticles() {
@@ -14,10 +14,12 @@ export function RawParticles() {
     await loadStarsPreset(engine);
     await loadSnowPreset(engine);
   }, []);
+  const { loaded, colorScheme } = useContext(ThemeContext);
   const theme = useThemeColors();
   const [particles] = useLocalStorage('particles', true);
-  const isLight = theme['color-scheme'] === 'light';
+  const isLight = colorScheme === 'light';
 
+  if (!loaded) return null;
   return particles ? (
     <TsParticles
       id='particles'
