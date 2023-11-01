@@ -37,6 +37,9 @@ export function ThemeProvider({ children }: PropsWithChildren) {
   useLayoutEffect(() => {
     if (theme) {
       document.documentElement.setAttribute('data-theme', theme);
+      if (colorScheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else document.documentElement.classList.remove('dark');
     }
   }, [theme]);
 

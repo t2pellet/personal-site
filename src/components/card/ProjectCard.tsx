@@ -24,9 +24,9 @@ export default function ProjectCard({
   return (
     <div
       className={classNames(
-        'whitespace-pre-wrap leading-tight tracking-tight text-secondary',
+        'whitespace-pre-wrap leading-tight tracking-tight',
         'rounded-box flex h-fit w-80 shrink-0 flex-col overflow-hidden',
-        'cursor-pointer bg-secondary-content',
+        'cursor-pointer bg-base-200 dark:bg-opacity-40',
         'transition-transform duration-300 ease-in-out hover:scale-105 focus:scale-105 active:scale-105',
         'project-card',
         className
@@ -49,7 +49,7 @@ export default function ProjectCard({
           </h1>
           <div
             className={classNames(
-              'mb-3 flex h-20 place-content-center items-center text-center text-base transition-all delay-100 duration-100 ease-in-out',
+              'neutral-content mb-3 flex h-20 place-content-center items-center text-center text-base transition-all delay-100 duration-100 ease-in-out dark:text-neutral-content',
               'project-card-description'
             )}
           >

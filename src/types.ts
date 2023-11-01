@@ -2,7 +2,7 @@ import * as TbIcons from 'react-icons/tb';
 import * as FaIcons from 'react-icons/fa6';
 import * as SiIcons from 'react-icons/si';
 
-export const themes = ['dracula', 'cmyk'] as const;
+export const themes = ['dracula', 'cmyk'] as const; // dark, light
 export type Theme = (typeof themes)[number];
 export type ThemeColors = {
   'color-scheme': 'light' | 'dark';

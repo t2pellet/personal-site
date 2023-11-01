@@ -24,7 +24,7 @@ export default function TimelineEvent({
         {<Icon size={32} />}
       </div>
       <div className='timeline-event-arrow absolute top-4 h-0 w-0 border-y-[10px] border-x-secondary-content border-y-transparent' />
-      <div className='rounded-box relative h-fit w-full bg-secondary-content p-4 md:p-8'>
+      <div className='rounded-box relative h-fit w-full bg-base-200 p-4 dark:bg-opacity-40 md:p-8'>
         <div
           className='timeline-event-body overflow-hidden transition-all'
           style={

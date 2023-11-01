@@ -5,7 +5,7 @@ type Props = HTMLProps<any> & PropsWithChildren;
 
 export default function ContentDiv({ className, children, ...props }: Props) {
   const classes = classNames(
-    'whitespace-pre-wrap rounded-box bg-secondary-content bg-opacity-40 p-4 xl:text-lg leading-tight tracking-tight text-secondary',
+    'whitespace-pre-wrap rounded-box bg-base-200 dark:bg-opacity-40 p-4 xl:text-lg leading-tight tracking-tight dark:text-neutral-content',
     className
   );
 

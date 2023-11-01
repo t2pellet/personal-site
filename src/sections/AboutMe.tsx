@@ -13,7 +13,7 @@ export default function AboutMe({ aboutMeContent }: AboutMeProps) {
   return (
     <PageSection section={SectionEnum.ABOUT} hideTitle>
       <div className='relative grid w-full grid-cols-1 gap-4 leading-snug lg:grid-cols-2'>
-        <div className='pt-4 sm:px-1 md:px-2 lg:px-4 xl:place-content-start xl:px-8 xl:pt-12'>
+        <div className='place-items-center pt-4 sm:px-1 md:px-2 lg:flex lg:px-4 xl:px-8 xl:pt-12'>
           <Image
             src={headshotPic}
             alt='Tenzin Pelletier'

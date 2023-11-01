@@ -15,5 +15,6 @@ const config: Config = {
     themes: ['cmyk', 'dracula'],
     darkTheme: 'dracula',
   },
+  darkMode: 'class',
 };
 export default config;

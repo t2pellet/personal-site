@@ -33,7 +33,9 @@ export default function TimelineJob({
       </h3>
       <h2 className='truncate text-2xl'>{role}</h2>
       <h1 className='mb-6 text-lg font-bold text-info'>{date}</h1>
-      <p className='mb-6 text-center text-secondary'>{description}</p>
+      <p className='mb-6 text-center dark:text-neutral-content'>
+        {description}
+      </p>
       <h1 className='mb-2 text-center text-lg font-bold'>Skills</h1>
       <div className='mx-auto flex max-w-[90%] flex-wrap place-content-center gap-x-2 gap-y-1'>
         {skills.map((props) => (
