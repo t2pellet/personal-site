@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px !important;
+    scroll-margin-top: 80px !important;
+}
+
+.timeline {
+    width: 19.125rem;
+
+    > .timeline-content > * {
+        display: none;
+    }
+
+    > .timeline-content > .timeline-event {
+        display: initial;
+        align-self: flex-end;
+        text-align: left;
+
+        > .timeline-event-point {
+            left: -4.625rem;
+        }
+
+        > .timeline-event-arrow {
+            left: -15px;
+            border-right-width: 15px;
+        }
+
+        &:hover, &:focus, &:active {
+            .timeline-event-body {
+                max-height: 28rem !important;
+
+                .truncate {
+                    white-space: pre-wrap !important;
+                }
+            }
+        }
+    }
+}
+
+/* md */
+@media (min-width: 768px) {
+    .timeline {
+        width: 23.125rem;
+    }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+    .timeline {
+        width: 54rem;
+
+        > .timeline-content > .timeline-event:nth-of-type(odd) {
+            align-self: flex-start;
+            text-align: right;
+
+            > .timeline-event-point {
+                left: initial;
+                right: -4.625rem;
+            }
+
+            > .timeline-event-arrow {
+                left: initial;
+                right: -15px;
+                border-right-width: 0;
+                border-left-width: 15px;
+            }
+        }
+    }
+}
+
+.project-card {
+    .project-card-description {
+        margin-top: 1rem;
+    }
+
+    .project-card-links {
+        bottom: -5rem;
+    }
+
+    &:hover, &:focus, &:active {
+        .project-card-image {
+            transform: scale(105%);
+        }
+
+        .project-card-description {
+            margin-top: 0;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+
+        .project-card-links {
+            bottom: -1rem;
+        }
+    }
+}

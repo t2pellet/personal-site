@@ -3,7 +3,7 @@ import PageSection from '@/components/PageSection';
 import { SectionEnum } from '@/types';
 import Image from 'next/image';
 import headshotPic from '../../public/headshot.jpg';
-import '@/app/globals.css';
+import '@/app/globals.scss';
 import NavLink from '@/components/nav/NavLink';
 import ContentDiv from '@/components/ContentDiv';
 

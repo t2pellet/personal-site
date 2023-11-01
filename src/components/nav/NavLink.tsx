@@ -1,5 +1,15 @@
-import React, { LinkHTMLAttributes, PropsWithChildren } from 'react';
+'use client';
+
+import React, {
+  LinkHTMLAttributes,
+  PropsWithChildren,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import { SectionEnum } from '@/types';
+import classNames from 'classnames';
+import { act } from 'react-dom/test-utils';
 
 export type NavLinkProps = Omit<LinkHTMLAttributes<any>, 'href'> &
   PropsWithChildren<{

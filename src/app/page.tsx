@@ -1,5 +1,5 @@
 import AboutMe from '@/sections/AboutMe';
-import './globals.css';
+import './globals.scss';
 import Skills from '@/sections/Skills';
 import Projects from '@/sections/Projects';
 import Work from '@/sections/Work';
