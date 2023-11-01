@@ -62,12 +62,12 @@ export default function ProjectCard({
             )}
           >
             {repository && (
-              <a className='btn btn-outline' href={repository}>
+              <a className='btn btn-outline' href={repository} target='_blank'>
                 <IconBrandGithub size={24} /> Code
               </a>
             )}
             {link && (
-              <a className='btn btn-primary' href={link}>
+              <a className='btn btn-primary' href={link} target='_blank'>
                 Check It Out
               </a>
             )}
