@@ -20,7 +20,6 @@ const contactFn = debounce(async (payload: FormData) => {
         privateKey: process.env.NEXT_PUBLIC_EMAIL_PRIVATE_KEY as string,
       }
     );
-    console.log('result: ' + result.status);
   } catch (e) {
     return { message: 'Hmm, something went wrong...', error: true };
   }

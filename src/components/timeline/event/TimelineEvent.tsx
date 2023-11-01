@@ -12,7 +12,6 @@ export default function TimelineEvent({
   baseHeight,
   ...props
 }: RawTimelineEventProps) {
-  console.log('testing: ' + icon);
   const Icon: React.FC<{ size: number }> = Icons[icon];
 
   return (

@@ -1,12 +1,15 @@
 'use client';
 
-import React from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { TbStars, TbStarsOff } from 'react-icons/tb';
 import classNames from 'classnames';
 import useLocalStorage from 'use-local-storage';
 
 export default function ParticleToggle() {
   const [particles, setParticles] = useLocalStorage<boolean>('particles', true);
+  const [loaded, setLoaded] = useState(false);
+
+  useLayoutEffect(() => setLoaded(true), []);
 
   const fullClasses = (className: string, on: boolean) => {
     return classNames(className, 'pointer-events-none absolute top-1', {
@@ -14,6 +17,7 @@ export default function ParticleToggle() {
     });
   };
 
+  if (!loaded) return null;
   return (
     <div className='relative flex h-fit'>
       <input

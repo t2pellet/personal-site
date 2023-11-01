@@ -5,25 +5,29 @@ import React, {
   useCallback,
   useLayoutEffect,
   useMemo,
+  useState,
 } from 'react';
 import { Theme, ThemeColors, themes } from '@/types';
 import useLocalStorage from 'use-local-storage';
 import themeColors from 'daisyui/src/theming/themes';
 
 export type ThemeContextType = {
-  theme: Theme;
-  colorScheme: 'light' | 'dark';
+  theme: Theme | undefined;
+  colorScheme: 'light' | 'dark' | undefined;
   toggleTheme: () => void;
+  loaded: boolean;
 };
 
 const defaultValue: ThemeContextType = {
-  theme: 'dracula',
-  colorScheme: 'dark',
+  theme: undefined,
+  colorScheme: undefined,
   toggleTheme: () => undefined,
+  loaded: false,
 };
 const Theme = React.createContext<ThemeContextType>(defaultValue);
 
 export function ThemeProvider({ children }: PropsWithChildren) {
+  const [loaded, setLoaded] = useState(false);
   const [theme, setTheme] = useLocalStorage<Theme>('theme', 'dracula');
   const { 'color-scheme': colorScheme } = useMemo(
     () =>
@@ -41,7 +45,8 @@ export function ThemeProvider({ children }: PropsWithChildren) {
         document.documentElement.classList.add('dark');
       } else document.documentElement.classList.remove('dark');
     }
-  }, [theme]);
+    setLoaded(true);
+  }, [colorScheme, theme]);
 
   // Update theme callback
   const toggleTheme = useCallback(() => {
@@ -52,7 +57,7 @@ export function ThemeProvider({ children }: PropsWithChildren) {
   }, [setTheme, theme]);
 
   return (
-    <Theme.Provider value={{ theme, colorScheme, toggleTheme }}>
+    <Theme.Provider value={{ theme, colorScheme, toggleTheme, loaded }}>
       {children}
     </Theme.Provider>
   );

@@ -3,18 +3,11 @@
 import React, { useContext } from 'react';
 import ThemeContext, { ThemeProvider } from '@/context/ThemeContext';
 import { TbMoon as IconMoon, TbSun as IconSun } from 'react-icons/tb';
-import classNames from 'classnames';
 
 function RawThemeToggle() {
-  const { colorScheme, toggleTheme } = useContext(ThemeContext);
-  const isDark = colorScheme != 'light';
+  const { colorScheme, toggleTheme, loaded } = useContext(ThemeContext);
 
-  const fullClasses = (className: string, dark: boolean) => {
-    return classNames(className, 'pointer-events-none absolute top-1', {
-      ['hidden']: dark ? isDark : !isDark,
-    });
-  };
-
+  if (!loaded) return null;
   return (
     <div className='relative flex h-fit'>
       <input
@@ -23,8 +16,14 @@ function RawThemeToggle() {
         onChange={toggleTheme}
         checked={colorScheme != 'light'}
       />
-      <IconSun size={16} className={fullClasses('left-1.5', false)} />
-      <IconMoon size={16} className={fullClasses('right-1.5', true)} />
+      <IconSun
+        size={16}
+        className='pointer-events-none absolute left-1.5 top-1 hidden dark:flex'
+      />
+      <IconMoon
+        size={16}
+        className='pointer-events-none absolute right-1.5 top-1 dark:hidden'
+      />
     </div>
   );
 }
