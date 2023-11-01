@@ -2,7 +2,7 @@ import React, { HTMLProps } from 'react';
 import { TbBrandGithub as IconBrandGithub } from 'react-icons/tb';
 import Image from 'next/image';
 import classNames from 'classnames';
-import './card.css';
+import styles from './styles.module.css';
 
 export type ProjectCardProps = HTMLProps<any> & {
   name: string;
@@ -28,14 +28,17 @@ export default function ProjectCard({
         'rounded-box flex h-fit w-80 shrink-0 flex-col overflow-hidden',
         'cursor-pointer bg-base-200 dark:bg-opacity-40',
         'transition-transform duration-300 ease-in-out hover:scale-105 focus:scale-105 active:scale-105',
-        'project-card',
+        styles.projectCard,
         className
       )}
       {...props}
     >
       <div className='overflow-hidden'>
         <Image
-          className='project-card-image object-cover transition-transform duration-300 ease-in-out'
+          className={classNames(
+            'object-cover transition-transform duration-300 ease-in-out',
+            styles.projectCardImage
+          )}
           src={image}
           alt={name}
           height={384}
@@ -50,7 +53,7 @@ export default function ProjectCard({
           <div
             className={classNames(
               'neutral-content mb-3 flex h-20 place-content-center items-center text-center text-base transition-all delay-100 duration-100 ease-in-out dark:text-neutral-content',
-              'project-card-description'
+              styles.projectCardDescription
             )}
           >
             <p>{description}</p>
@@ -58,7 +61,7 @@ export default function ProjectCard({
           <div
             className={classNames(
               'absolute flex h-12 w-full place-content-center gap-2 transition-all delay-100 duration-200 ease-in-out',
-              'project-card-links'
+              styles.projectCardLinks
             )}
           >
             {repository && (

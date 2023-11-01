@@ -1,25 +1,25 @@
-.project-card {
-    .project-card-description {
+.projectCard {
+    .projectCardDescription {
         margin-top: 1rem;
     }
 
-    .project-card-links {
+    .projectCardLinks {
         bottom: -5rem;
     }
 }
 
-.project-card:hover, .project-card:focus, .project-card:active {
+.projectCard:hover, .projectCard:focus, .projectCard:active {
     .project-card-image {
         transform: scale(105%);
     }
 
-    .project-card-description {
+    .projectCardDescription {
         margin-top: 0;
         font-size: 0.875rem;
         line-height: 1.25rem;
     }
 
-    .project-card-links {
+    .projectCardLinks {
         bottom: -1rem;
     }
 }

@@ -1,26 +1,28 @@
 .timeline {
     width: 19.125rem;
 
-    > .timeline-content > * {
+    > .timelineContent > * {
         display: none;
     }
 
-    > .timeline-content > .timeline-event {
-        display: initial;
-        align-self: flex-end;
-        text-align: left;
+    > .timelineContent {
+        > .timelineEvent {
+            display: initial;
+            align-self: flex-end;
+            text-align: left;
 
-        > .timeline-event-point {
-            left: -4.625rem;
+            > .timelineEventPoint {
+                left: -4.625rem;
+            }
+
+            > .timelineEventArrow {
+                left: -15px;
+                border-right-width: 15px;
+            }
         }
 
-        > .timeline-event-arrow {
-            left: -15px;
-            border-right-width: 15px;
-        }
-
-        &:hover, &:focus, &:active {
-            .timeline-event-body {
+        > .timelineEvent:hover, .timelineEvent:focus, .timelineEvent:active {
+            .timelineEventBody {
                 max-height: 28rem !important;
 
                 .truncate {
@@ -43,16 +45,16 @@
     .timeline {
         width: 54rem;
 
-        > .timeline-content > .timeline-event:nth-of-type(odd) {
+        > .timelineContent > .timelineEvent:nth-of-type(odd) {
             align-self: flex-start;
             text-align: right;
 
-            > .timeline-event-point {
+            > .timelineEventPoint {
                 left: initial;
                 right: -4.625rem;
             }
 
-            > .timeline-event-arrow {
+            > .timelineEventArrow {
                 left: initial;
                 right: -15px;
                 border-right-width: 0;
