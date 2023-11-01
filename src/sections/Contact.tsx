@@ -3,7 +3,7 @@ import { SectionEnum } from '@/types';
 import LabeledIcon, { LabeledIconProps } from '@/components/LabeledIcon';
 import React from 'react';
 import ContentDiv from '@/components/ContentDiv';
-import ContactForm from '@/components/ContactForm';
+import ContactForm from '@/components/contact-form';
 
 const LINKS: LabeledIconProps[] = [
   {
