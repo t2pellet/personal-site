@@ -29,8 +29,8 @@ export default function NavBar() {
 
   const NavRoot = ({ mobile = false }: { mobile?: boolean }) => {
     const classes = classNames('btn btn-ghost text-xl normal-case', {
-      ['min-[890px]:hidden']: mobile,
-      ['hidden min-[890px]:flex']: !mobile,
+      ['min-[965px]:hidden']: mobile,
+      ['hidden min-[965px]:flex']: !mobile,
     });
     return (
       <a className={classes} href='#'>
@@ -51,12 +51,12 @@ export default function NavBar() {
         <NavRoot />
       </div>
       <div className='navbar-center'>
-        <ul className='menu menu-horizontal hidden px-1 min-[890px]:flex'>
+        <ul className='menu menu-horizontal hidden px-1 min-[965px]:flex'>
           <NavItems />
         </ul>
         <NavRoot mobile />
       </div>
-      <div className='navbar-end space-x-2 min-[890px]:space-x-4'>
+      <div className='navbar-end space-x-2 min-[965px]:space-x-4'>
         <ParticleToggle />
         <ThemeToggle />
       </div>

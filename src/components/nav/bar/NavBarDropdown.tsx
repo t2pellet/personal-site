@@ -11,10 +11,10 @@ export default function NavBarDropdown({ children }: PropsWithChildren) {
   const toggle = useRef<HTMLLabelElement>(null);
 
   return (
-    <div className='dropdown static min-[890px]:dropdown-hover'>
+    <div className='dropdown static min-[965px]:dropdown-hover'>
       <label
         tabIndex={0}
-        className='btn btn-circle btn-ghost min-[890px]:hidden'
+        className='btn btn-circle btn-ghost min-[965px]:hidden'
         ref={toggle}
         id='navbar-toggle'
         onClickCapture={() => {
