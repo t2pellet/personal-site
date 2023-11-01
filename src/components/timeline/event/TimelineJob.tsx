@@ -1,9 +1,10 @@
 import TimelineEvent, { RawTimelineEventProps } from './TimelineEvent';
 import LabeledIcon, { LabeledIconProps } from '@/components/LabeledIcon';
+import classNames from 'classnames';
 
 export type TimelineJobProps = Omit<
   RawTimelineEventProps,
-  'children' | 'baseHeight'
+  'children' | 'baseHeight' | 'icon'
 > & {
   title: string;
   role: string;
@@ -21,17 +22,23 @@ export default function TimelineJob({
   ...props
 }: TimelineJobProps) {
   return (
-    <TimelineEvent baseHeight='6rem' {...props}>
-      <h3 className='text-3xl font-extrabold text-primary'>{title}</h3>
-      <h2 className='text-2xl'>{role}</h2>
+    <TimelineEvent baseHeight='6rem' {...props} icon='TbBriefcase'>
+      <h3
+        className={classNames(
+          'truncate font-extrabold text-primary',
+          title.length < 16 ? 'text-3xl' : 'text-[1.75rem]'
+        )}
+      >
+        {title}
+      </h3>
+      <h2 className='truncate text-2xl'>{role}</h2>
       <h1 className='mb-6 text-lg font-bold text-info'>{date}</h1>
       <p className='mb-6 text-center text-secondary'>{description}</p>
-      <h1 className='text-center text-lg font-bold'>Skills</h1>
-      <div className='flex flex-wrap place-content-center gap-2'>
+      <h1 className='mb-2 text-center text-lg font-bold'>Skills</h1>
+      <div className='mx-auto flex max-w-[90%] flex-wrap place-content-center gap-x-2 gap-y-1'>
         {skills.map((props) => (
           <LabeledIcon
             key={`job-${title}-skill-${props.name}`}
-            className='h-16 w-16'
             labelType='tooltip'
             {...props}
           />

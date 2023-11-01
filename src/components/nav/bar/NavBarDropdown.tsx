@@ -1,7 +1,7 @@
 'use client';
 
 import React, { PropsWithChildren, useRef } from 'react';
-import { IconMenu2 } from '@tabler/icons-react';
+import { TbMenu2 } from 'react-icons/tb';
 
 // Made this a client component 'cause it can't close on click otherwise
 export default function NavBarDropdown({ children }: PropsWithChildren) {
@@ -24,7 +24,7 @@ export default function NavBarDropdown({ children }: PropsWithChildren) {
           isOpen.current = !isOpen.current;
         }}
       >
-        <IconMenu2 />
+        <TbMenu2 />
       </label>
       <ul
         tabIndex={0}

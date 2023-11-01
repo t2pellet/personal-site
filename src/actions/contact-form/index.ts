@@ -25,7 +25,7 @@ const contactFn = debounce(async (payload: FormData) => {
     return { message: 'Hmm, something went wrong...', error: true };
   }
   return { message: 'Successfully sent your message! Will be in touch :)' };
-}, 60000);
+}, 10000);
 
 export default async function contactAction(
   _prevState: FormStateType,

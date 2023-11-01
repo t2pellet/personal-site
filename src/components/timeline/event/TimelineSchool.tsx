@@ -1,8 +1,9 @@
 import TimelineEvent, { RawTimelineEventProps } from './TimelineEvent';
+import classNames from 'classnames';
 
 export type TimelineSchoolProps = Omit<
   RawTimelineEventProps,
-  'children' | 'baseHeight'
+  'children' | 'baseHeight' | 'icon'
 > & {
   title: string;
   major: string;
@@ -16,9 +17,16 @@ export default function TimelineSchool({
   ...props
 }: TimelineSchoolProps) {
   return (
-    <TimelineEvent {...props}>
-      <h3 className='text-3xl font-extrabold text-primary'>{title}</h3>
-      <h2 className='text-2xl'>{major}</h2>
+    <TimelineEvent {...props} icon='TbSchool'>
+      <h3
+        className={classNames(
+          'truncate font-extrabold text-primary',
+          title.length < 16 ? 'text-3xl' : 'text-[1.75rem]'
+        )}
+      >
+        {title}
+      </h3>
+      <h2 className='truncate text-2xl'>{major}</h2>
       <h1 className='text-lg font-bold text-info'>{date}</h1>
     </TimelineEvent>
   );

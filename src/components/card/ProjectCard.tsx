@@ -1,5 +1,5 @@
 import React, { HTMLProps } from 'react';
-import { IconBrandGithub } from '@tabler/icons-react';
+import { TbBrandGithub as IconBrandGithub } from 'react-icons/tb';
 import Image from 'next/image';
 import classNames from 'classnames';
 import './card.css';
@@ -24,10 +24,10 @@ export default function ProjectCard({
   return (
     <div
       className={classNames(
-        'whitespace-pre-wrap leading-tight tracking-tight text-secondary xl:text-lg',
+        'whitespace-pre-wrap leading-tight tracking-tight text-secondary',
         'rounded-box flex h-fit w-80 shrink-0 flex-col overflow-hidden',
         'cursor-pointer bg-secondary-content',
-        'transition-transform duration-300 ease-in-out hover:scale-105',
+        'transition-transform duration-300 ease-in-out hover:scale-105 focus:scale-105 active:scale-105',
         'project-card',
         className
       )}
@@ -49,7 +49,7 @@ export default function ProjectCard({
           </h1>
           <div
             className={classNames(
-              'mb-3 flex h-20 place-content-center items-center text-center transition-all delay-100 duration-100 ease-in-out',
+              'mb-3 flex h-20 place-content-center items-center text-center text-base transition-all delay-100 duration-100 ease-in-out',
               'project-card-description'
             )}
           >
@@ -63,7 +63,7 @@ export default function ProjectCard({
           >
             {repository && (
               <a className='btn btn-outline' href={repository}>
-                <IconBrandGithub /> Code
+                <IconBrandGithub size={24} /> Code
               </a>
             )}
             {link && (

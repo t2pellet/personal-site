@@ -19,10 +19,15 @@
             border-right-width: 15px;
         }
 
-        &:hover .timeline-event-body {
-            max-height: 18rem !important;
-        }
+        &:hover, &:focus, &:active {
+            .timeline-event-body {
+                max-height: 28rem !important;
 
+                .truncate {
+                    white-space: pre-wrap !important;
+                }
+            }
+        }
     }
 }
 

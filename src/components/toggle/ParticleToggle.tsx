@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { IconStars, IconStarsOff } from '@tabler/icons-react';
+import { TbStars, TbStarsOff } from 'react-icons/tb';
 import classNames from 'classnames';
 import useLocalStorage from 'use-local-storage';
 
@@ -22,8 +22,8 @@ export default function ParticleToggle() {
         onChange={() => setParticles(!particles)}
         checked={particles}
       />
-      <IconStarsOff size={16} className={fullClasses('left-1.5', false)} />
-      <IconStars size={16} className={fullClasses('right-1.5', true)} />
+      <TbStarsOff size={16} className={fullClasses('left-1.5', false)} />
+      <TbStars size={16} className={fullClasses('right-1.5', true)} />
     </div>
   );
 }

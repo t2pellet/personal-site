@@ -1,6 +1,6 @@
 import NavLink from '@/components/nav/NavLink';
 import { SectionEnum } from '@/types';
-import { IconChevronsDown } from '@tabler/icons-react';
+import { TbChevronsDown as IconChevronsDown } from 'react-icons/tb';
 import React from 'react';
 import classNames from 'classnames';
 

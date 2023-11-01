@@ -1,6 +1,5 @@
 import React, { PropsWithChildren } from 'react';
 import { IconKey, Icons } from '@/types';
-import { TablerIconsProps } from '@tabler/icons-react';
 
 export type RawTimelineEventProps = PropsWithChildren<{
   icon: IconKey;
@@ -13,7 +12,8 @@ export default function TimelineEvent({
   baseHeight,
   ...props
 }: RawTimelineEventProps) {
-  const Icon: React.FC<TablerIconsProps> = Icons[icon];
+  console.log('testing: ' + icon);
+  const Icon: React.FC<{ size: number }> = Icons[icon];
 
   return (
     <div

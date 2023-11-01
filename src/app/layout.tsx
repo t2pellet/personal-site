@@ -10,7 +10,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' data-theme='dracula'>
+    <html lang='en' data-theme='dracula' className='w-full overflow-x-hidden'>
       <Script src='js/hashchange.js' />
       <body>
         <Particles />

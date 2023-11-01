@@ -4,34 +4,19 @@ import { SectionEnum } from '@/types';
 import Timeline from '@/components/timeline/Timeline';
 import { TimelineJob } from '@/components/timeline/event';
 import KeepReading from '@/components/KeepReading';
+import { TimelineJobProps } from '@/components/timeline/event/TimelineJob';
 
-export default function Work() {
+export type WorkProps = {
+  jobs: TimelineJobProps[];
+};
+
+export default function Work({ jobs }: WorkProps) {
   return (
     <PageSection section={SectionEnum.WORK}>
       <Timeline className='ml-8 md:mx-auto'>
-        <div></div>
-        <TimelineJob
-          title='A job'
-          role='Software Engineer'
-          date='Sept 2021 - Aug 2023'
-          description='I did some work'
-          icon={'Icon12Hours'}
-          skills={[
-            { name: 'React', icon: 'IconBrandReact' },
-            { name: 'Next.JS', icon: 'IconBrandNextjs' },
-          ]}
-        />
-        <TimelineJob
-          title='A job'
-          role='Software Engineer'
-          date='Sept 2021 - Aug 2023'
-          description='I did some work'
-          icon={'Icon12Hours'}
-          skills={[
-            { name: 'React', icon: 'IconBrandReact' },
-            { name: 'Next.JS', icon: 'IconBrandNextjs' },
-          ]}
-        />
+        {jobs.map((job, idx) => (
+          <TimelineJob {...job} key={`job-${idx}`} />
+        ))}
       </Timeline>
       <KeepReading
         className='mt-6'

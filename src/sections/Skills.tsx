@@ -6,16 +6,11 @@ import NavLink from '@/components/nav/NavLink';
 import ContentDiv from '@/components/ContentDiv';
 import KeepReading from '@/components/KeepReading';
 
-const SKILLS: LabeledIconProps[] = [
-  { icon: 'IconBrandTypescript', name: 'TypeScript' },
-  { icon: 'IconBrandNodejs', name: 'Node.JS' },
-  { icon: 'IconBrandReact', name: 'React' },
-  { icon: 'IconBrandNextjs', name: 'Next.JS' },
-  { icon: 'IconBrandSass', name: 'CSS/SASS' },
-  { icon: 'IconBrandHtml5', name: 'HTML5' },
-];
+export type SkillsProps = {
+  skills: LabeledIconProps[];
+};
 
-export default function Skills() {
+export default function Skills({ skills }: SkillsProps) {
   return (
     <PageSection section={SectionEnum.SKILLS}>
       <ContentDiv className='mx-auto md:w-3/4 xl:w-2/4'>
@@ -33,9 +28,9 @@ export default function Skills() {
           {` I've used them in!`}
         </p>
       </ContentDiv>
-      <div className='flex flex-wrap place-content-center gap-4 py-8'>
-        {SKILLS.map((skill) => (
-          <LabeledIcon key={`skill-${skill}`} {...skill} />
+      <div className='mx-auto flex max-w-screen-lg flex-wrap place-content-center gap-4 py-8'>
+        {skills.map((skill, idx) => (
+          <LabeledIcon key={`skill-${idx}`} {...skill} />
         ))}
       </div>
       <KeepReading

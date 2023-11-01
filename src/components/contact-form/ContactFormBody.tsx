@@ -2,13 +2,19 @@
 
 import contactAction, { FormStateType } from '@/actions/contact-form';
 import ContactFormSubmitBtn from '@/components/contact-form/ContactFormSubmitBtn';
-import { useCallback, useRef } from 'react';
+import { FormEvent, useCallback, useRef } from 'react';
 import { experimental_useFormState as useFormState } from 'react-dom';
 import ContactFormStatusMsg from '@/components/contact-form/ContactFormStatusMsg';
 
 export default function ContactFormBody() {
   const formRef = useRef<HTMLFormElement>(null);
-  const onSubmit = useCallback(() => formRef.current?.reset(), [formRef]);
+  const onSubmit = useCallback(
+    (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      formRef.current?.reset();
+    },
+    [formRef]
+  );
   const [state, formAction] = useFormState<FormStateType, FormData>(
     contactAction,
     {
@@ -28,23 +34,27 @@ export default function ContactFormBody() {
         type='text'
         placeholder='Enter your name'
         className='input input-bordered input-primary w-full'
+        required
       />
       <input
         name='email'
-        type='text'
+        type='email'
         placeholder='Enter your email'
         className='input input-bordered input-primary w-full'
+        required
       />
       <input
         name='phone'
-        type='text'
+        type='number'
         placeholder='Enter your phone #'
         className='input input-bordered input-primary w-full'
+        required
       />
       <textarea
         name='message'
         placeholder='Your message'
         className='textarea textarea-primary w-full'
+        required
       />
       <ContactFormSubmitBtn />
       <ContactFormStatusMsg state={state} />

@@ -1,4 +1,6 @@
-import * as TablerIcons from '@tabler/icons-react';
+import * as TbIcons from 'react-icons/tb';
+import * as FaIcons from 'react-icons/fa6';
+import * as SiIcons from 'react-icons/si';
 
 export const themes = ['dracula', 'cmyk'] as const;
 export type Theme = (typeof themes)[number];
@@ -34,8 +36,10 @@ export const sections: Record<SectionEnum, string> = {
   school: 'Education',
   contact: 'Contact',
 };
-export type SectionType = (typeof sections)[SectionEnum];
 
-const { createReactComponent, ...Icons } = TablerIcons;
+export const Icons = {
+  ...TbIcons,
+  ...FaIcons,
+  ...SiIcons,
+};
 export type IconKey = keyof typeof Icons;
-export { Icons };

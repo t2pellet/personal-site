@@ -1,9 +1,8 @@
 import React, { HTMLProps } from 'react';
 import { IconKey, Icons } from '@/types';
-import { TablerIconsProps } from '@tabler/icons-react';
 import classNames from 'classnames';
 
-export type LabeledIconProps = HTMLProps<any> & {
+export type LabeledIconProps = HTMLProps<HTMLAnchorElement> & {
   icon: IconKey;
   name: string;
   labelType?: 'text' | 'tooltip';
@@ -18,11 +17,12 @@ export default function LabeledIcon({
   className,
   ...props
 }: LabeledIconProps) {
-  const Icon: React.FC<TablerIconsProps> = Icons[icon];
+  const Icon: React.FC<{ className: string; size: number }> = Icons[icon];
   const classes = classNames(
-    'flex h-24 w-24 cursor-pointer flex-col place-content-center transition-transform duration-200 ease-in-out hover:scale-125',
+    'flex cursor-pointer flex-col place-content-center transition-transform duration-200 ease-in-out hover:scale-125',
     {
-      ['tooltip']: labelType === 'tooltip',
+      ['h-14 w-14 tooltip']: labelType === 'tooltip',
+      ['h-24 w-24']: labelType != 'tooltip',
     },
     className
   );

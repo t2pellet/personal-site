@@ -7,16 +7,25 @@ import NavBarLink from '@/components/nav/bar/NavBarLink';
 import ParticleToggle from '@/components/toggle/ParticleToggle';
 
 export default function NavBar() {
-  const NavItems = () => {
-    return Object.keys(sections).map((section) => {
-      const sectionEnum = section as SectionEnum;
-      return (
-        <li key={`nav-link-${section}`}>
-          <NavBarLink section={sectionEnum} />
-        </li>
-      );
-    });
-  };
+  const NavItems = () => (
+    <>
+      {Object.keys(sections).map((section) => {
+        const sectionEnum = section as SectionEnum;
+        return (
+          <li key={`nav-link-${section}`}>
+            <NavBarLink section={sectionEnum} />
+          </li>
+        );
+      })}
+      <a
+        className='btn btn-ghost btn-lg flex place-content-center text-center align-middle text-lg md:btn-md lg:btn-sm'
+        href='docs/resume.pdf'
+        target='_blank'
+      >
+        Resume
+      </a>
+    </>
+  );
 
   const NavRoot = ({ mobile = false }: { mobile?: boolean }) => {
     const classes = classNames('btn btn-ghost text-xl normal-case', {

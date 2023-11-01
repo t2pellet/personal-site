@@ -2,7 +2,7 @@
 
 import React, { useContext } from 'react';
 import ThemeContext, { ThemeProvider } from '@/context/ThemeContext';
-import { IconMoon, IconSun } from '@tabler/icons-react';
+import { TbMoon as IconMoon, TbSun as IconSun } from 'react-icons/tb';
 import classNames from 'classnames';
 
 function RawThemeToggle() {

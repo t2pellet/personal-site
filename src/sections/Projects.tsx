@@ -4,57 +4,21 @@ import { SectionEnum } from '@/types';
 import ProjectCard, { ProjectCardProps } from '@/components/card/ProjectCard';
 import KeepReading from '@/components/KeepReading';
 
-const PROJECTS: ProjectCardProps[] = [
-  {
-    name: 'Test',
-    description: `It's something`,
-    image: '/headshot.jpg',
-    link: 'google.com',
-    repository: 'github.com',
-  },
-  {
-    name: 'Test',
-    description: `It's something`,
-    image: '/headshot.jpg',
-    link: 'google.com',
-    repository: 'github.com',
-  },
-  {
-    name: 'Test',
-    description: `It's something`,
-    image: '/headshot.jpg',
-    link: 'google.com',
-    repository: 'github.com',
-  },
-  {
-    name: 'Test',
-    description: `It's something`,
-    image: '/headshot.jpg',
-    link: 'google.com',
-    repository: 'github.com',
-  },
-  {
-    name: 'Test',
-    description: `It's something`,
-    image: '/headshot.jpg',
-    link: 'google.com',
-    repository: 'github.com',
-  },
-];
+export type ProjectsProps = {
+  projects: ProjectCardProps[];
+};
 
-export default function Projects() {
+export default function Projects({ projects }: ProjectsProps) {
   return (
     <PageSection section={SectionEnum.PROJECTS}>
-      <div className='carousel carousel-center rounded-box -mx-2 max-w-[100vw] space-x-4 p-6 sm:-mx-4 md:mx-0 md:max-w-full'>
-        {PROJECTS.map((props, idx) => (
-          <div key={`project-${idx}`} className='carousel-item relative'>
-            <ProjectCard
-              {...props}
-              id={`project-${idx}`}
-              className='carousel-item'
-            />
-          </div>
-        ))}
+      <div className='mx-auto w-fit'>
+        <div className='carousel-center carousel rounded-box -mx-2 max-w-[100vw] space-x-4 p-6 sm:-mx-4 md:mx-0 md:max-w-full'>
+          {projects.map((props, idx) => (
+            <div key={`project-${idx}`} className='carousel-item relative'>
+              <ProjectCard {...props} className='carousel-item' />
+            </div>
+          ))}
+        </div>
       </div>
       <KeepReading
         className='mt-4'

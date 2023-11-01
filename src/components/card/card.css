@@ -8,13 +8,15 @@
     }
 }
 
-.project-card:hover {
+.project-card:hover, .project-card:focus, .project-card:active {
     .project-card-image {
         transform: scale(105%);
     }
 
     .project-card-description {
         margin-top: 0;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
     }
 
     .project-card-links {
