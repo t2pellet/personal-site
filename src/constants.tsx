@@ -115,7 +115,7 @@ const SCHOOLS: TimelineSchoolProps[] = [
   },
 ];
 const SKILLS: LabeledIconProps[] = [
-  { icon: 'TbBrandNextjs', name: 'TypeScript' },
+  { icon: 'TbBrandNextjs', name: 'Next.JS' },
   { icon: 'TbBrandReact', name: 'React' },
   { icon: 'SiExpress', name: 'Express.JS' },
   { icon: 'TbBrandNodejs', name: 'Node.JS' },
