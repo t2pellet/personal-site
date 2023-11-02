@@ -18,7 +18,7 @@ export default function NavBar() {
         );
       })}
       <a
-        className='btn btn-ghost btn-lg flex place-content-center text-center align-middle text-lg md:btn-md lg:btn-sm'
+        className='btn btn-ghost btn-lg flex place-content-center text-center align-middle text-lg text-info md:btn-md lg:btn-sm'
         href='docs/resume.pdf'
         target='_blank'
       >

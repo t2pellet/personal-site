@@ -27,8 +27,8 @@ export default function useActiveSection() {
   }, []);
 
   useEffect(() => {
-    window.addEventListener('scrollend', updateActiveState);
-    return () => window.removeEventListener('scrollend', updateActiveState);
+    window.addEventListener('scroll', updateActiveState);
+    return () => window.removeEventListener('scroll', updateActiveState);
   }, [updateActiveState]);
 
   return activeSection;

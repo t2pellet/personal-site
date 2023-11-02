@@ -1,7 +1,7 @@
 'use client';
 
 import NavLink, { NavLinkProps } from '@/components/nav/NavLink';
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import { SectionEnum, sections } from '@/types';
 import useActiveSection from '@/hooks/useActiveSection';
@@ -16,8 +16,8 @@ export default function NavBarLink({
     'btn btn-lg md:btn-md lg:btn-sm btn-ghost align-middle flex place-content-center text-center text-lg',
     className,
     {
-      ['text-info']: activeSection == props.section,
-      ['hover:text-info']: activeSection == props.section,
+      ['text-secondary']: activeSection == props.section,
+      ['hover:text-secondary']: activeSection == props.section,
     }
   );
 

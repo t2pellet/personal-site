@@ -27,7 +27,7 @@ export default function TimelineSchool({
         {title}
       </h3>
       <h2 className='truncate text-2xl'>{major}</h2>
-      <h1 className='text-lg font-bold text-info'>{date}</h1>
+      <h1 className='text-lg font-bold text-secondary'>{date}</h1>
     </TimelineEvent>
   );
 }

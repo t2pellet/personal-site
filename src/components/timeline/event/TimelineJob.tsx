@@ -32,8 +32,8 @@ export default function TimelineJob({
         {title}
       </h3>
       <h2 className='truncate text-2xl'>{role}</h2>
-      <h1 className='mb-6 text-lg font-bold text-info'>{date}</h1>
-      <p className='mb-6 text-center dark:text-neutral-content'>
+      <h1 className='mb-6 text-lg font-bold text-secondary'>{date}</h1>
+      <p className='mb-4 text-center dark:text-neutral-content'>
         {description}
       </p>
       <h1 className='mb-2 text-center text-lg font-bold'>Skills</h1>

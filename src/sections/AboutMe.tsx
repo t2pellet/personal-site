@@ -12,7 +12,7 @@ export type AboutMeProps = { aboutMeContent: React.ReactElement };
 export default function AboutMe({ aboutMeContent }: AboutMeProps) {
   return (
     <PageSection section={SectionEnum.ABOUT} hideTitle>
-      <div className='relative grid w-full grid-cols-1 gap-4 leading-snug lg:grid-cols-2'>
+      <div className='relative mx-auto grid w-full max-w-screen-xl grid-cols-1 gap-4 leading-snug lg:grid-cols-2'>
         <div className='place-items-center pt-4 sm:px-1 md:px-2 lg:flex lg:px-4 xl:px-8 xl:pt-12'>
           <Image
             src={headshotPic}
