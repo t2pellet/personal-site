@@ -3,8 +3,8 @@
 import React, { useCallback } from 'react';
 import classNames from 'classnames';
 import { Language } from '@/types';
-import { useRouter } from 'next-intl/client';
 import { NextIntlClientProvider } from 'next-intl';
+import { useRouter } from 'next/navigation';
 
 function RawLanguageToggle({ lang }: { lang: Language }) {
   const router = useRouter();
@@ -18,7 +18,7 @@ function RawLanguageToggle({ lang }: { lang: Language }) {
 
   const onClick = useCallback(() => {
     const newLang = lang == 'en' ? 'fr' : 'en';
-    router.replace('/', { locale: newLang });
+    router.replace(`/${newLang}`);
   }, [lang, router]);
 
   return (
