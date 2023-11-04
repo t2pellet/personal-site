@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import NavBarLink from '@/components/nav/bar/link';
 import ParticleToggle from '@/components/toggle/ParticleToggle';
 import { useLocale } from 'next-intl';
+import LanguageToggle from '@/components/toggle/LanguageToggle';
 
 export default function NavBar() {
   const locale = useLocale();
@@ -58,6 +59,7 @@ export default function NavBar() {
         <NavRoot mobile />
       </div>
       <div className='navbar-end space-x-2 min-[965px]:space-x-4'>
+        <LanguageToggle lang={locale} />
         <ParticleToggle />
         <ThemeToggle />
       </div>
