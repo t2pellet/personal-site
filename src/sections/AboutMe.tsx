@@ -10,7 +10,7 @@ import { useTranslations } from 'next-intl';
 import { Markup } from 'interweave';
 
 export default function AboutMe() {
-  const dict = useTranslations('sections');
+  const dict = useTranslations('sections.aboutMe');
 
   return (
     <PageSection section={SectionEnum.ABOUT} hideTitle>
@@ -28,20 +28,20 @@ export default function AboutMe() {
             <span className='font-black text-primary'>Tenzin</span> Pelletier
           </div>
           <ContentDiv className='text-center lg:text-left'>
-            <Markup content={dict.raw('aboutMe')} />
+            <Markup content={dict.raw('content')} />
           </ContentDiv>
           <div className='mt-4 flex place-content-center gap-6'>
             <NavLink
               className='btn btn-outline w-36'
               section={SectionEnum.SKILLS}
             >
-              Read More
+              {dict('readMore')}
             </NavLink>
             <NavLink
               className='btn btn-primary w-36'
               section={SectionEnum.CONTACT}
             >
-              Contact
+              {dict('contact')}
             </NavLink>
           </div>
         </div>

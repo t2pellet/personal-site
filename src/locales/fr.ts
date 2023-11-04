@@ -3,11 +3,11 @@ import { SectionEnum } from '@/types';
 
 const aboutMe = `
 <div>
-<b>Salut!</b> Je m'apelle Tenzin, un <div class='tooltip tooltip-bottom' data-tip='diplômé'>🎓</div> en devenir en <b>Informatique</b> à <b>UWaterloo</b> avec presque <b>2 ans d'éxperience</b> de <div class='tooltip tooltip-bottom' data-tip='travail'>🛠</div>
+<b>Salut!</b> Je m'appelle Tenzin, un futur <div class='tooltip tooltip-bottom' data-tip='diplômé'>🎓</div> en <b>Informatique</b> à <b>UWaterloo</b> avec presque <b>2 ans d'éxperience</b> de <div class='tooltip tooltip-bottom' data-tip='travail'>🛠</div>
       
 Je prospère en concevant des fonctionnalités <b>axées sur l'utilisateur</b> qui ont un véritable <b>impact</b>. Rien n'égale le fait de voir mon travail prendre forme de manière <b>tangible</b> et laisser une <b>empreinte positive</b> sur ses utilisateurs.
       
-Mon ensemble d'outils se concentre <b>TypeScript</b>, <b>Next.js</b>, and <b>React</b>, mais je ne suis pas étranger à <b>Java</b>, <b>Spring</b>, <b>C#</b>, ou <b>Unity</b>
+Mon ensemble d'outils se concentre sur <b>TypeScript</b>, <b>Next.js</b>, and <b>React</b>, mais je suis aussi familier avec <b>Java</b>, <b>Spring</b>, <b>C#</b>, et <b>Unity</b>
 
 Au-delà du monde du code, je suis en train d'apprendre la <div class='tooltip tooltip-bottom' data-tip='guitare'>🎸</div> et j'apprécie plonger dans les univers de la <div class='tooltip tooltip-bottom' data-tip='photographie'>📸</div>, des <div class='tooltip tooltip-bottom' data-tip='jeux de société'>🎲</div> et de <div class='tooltip tooltip-bottom' data-tip="Dungeons & Dragons (D&D)">🧙🏾‍♂️</div>.
 
@@ -37,7 +37,11 @@ export default {
     contact: 'Contact',
   },
   sections: {
-    aboutMe,
+    aboutMe: {
+      content: aboutMe,
+      readMore: 'Lire Plus',
+      contact: 'Contact',
+    },
     skills,
     projects: {
       metalworks:

@@ -37,7 +37,11 @@ export default {
     contact: 'Contact',
   },
   sections: {
-    aboutMe,
+    aboutMe: {
+      content: aboutMe,
+      readMore: 'Read More',
+      contact: 'Contact',
+    },
     skills,
     projects: {
       metalworks: `A full-stack Next.JS / Express.JS application for FoundryVTT hosting on DigitalOcean`,
