@@ -3,10 +3,8 @@
 import contactAction, { FormStateType } from '@/actions/contact-form';
 import ContactFormSubmitBtn from '@/components/contact-form/ContactFormSubmitBtn';
 import { FormEvent, useCallback, useRef } from 'react';
-import ContactFormStatusMsg from '@/components/contact-form/ContactFormStatusMsg';
-
-// @ts-ignore
 import { experimental_useFormState as useFormState } from 'react-dom';
+import ContactFormStatusMsg from '@/components/contact-form/ContactFormStatusMsg';
 
 type FormBodyProps = {
   placeholders: {
