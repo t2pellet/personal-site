@@ -1,10 +1,7 @@
-import TimelineEvent, { RawTimelineEventProps } from './TimelineEvent';
+import TimelineEvent from './TimelineEvent';
 import classNames from 'classnames';
 
-export type TimelineSchoolProps = Omit<
-  RawTimelineEventProps,
-  'children' | 'baseHeight' | 'icon'
-> & {
+export type TimelineSchoolProps = {
   title: string;
   major: string;
   date: string;

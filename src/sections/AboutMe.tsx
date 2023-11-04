@@ -6,13 +6,15 @@ import headshotPic from '../../public/headshot.jpg';
 import '@/app/globals.scss';
 import NavLink from '@/components/nav/NavLink';
 import ContentDiv from '@/components/ContentDiv';
+import { useTranslations } from 'next-intl';
+import { Markup } from 'interweave';
 
-export type AboutMeProps = { aboutMeContent: React.ReactElement };
+export default function AboutMe() {
+  const dict = useTranslations('sections');
 
-export default function AboutMe({ aboutMeContent }: AboutMeProps) {
   return (
     <PageSection section={SectionEnum.ABOUT} hideTitle>
-      <div className='relative mx-auto grid w-full max-w-screen-xl grid-cols-1 gap-4 leading-snug lg:grid-cols-2'>
+      <div className='relative mx-auto grid w-full max-w-[1600px] grid-cols-1 gap-4 leading-snug lg:grid-cols-2'>
         <div className='place-items-center pt-4 sm:px-1 md:px-2 lg:flex lg:px-4 xl:px-8 xl:pt-12'>
           <Image
             src={headshotPic}
@@ -26,7 +28,7 @@ export default function AboutMe({ aboutMeContent }: AboutMeProps) {
             <span className='font-black text-primary'>Tenzin</span> Pelletier
           </div>
           <ContentDiv className='text-center lg:text-left'>
-            {aboutMeContent}
+            <Markup content={dict.raw('aboutMe')} />
           </ContentDiv>
           <div className='mt-4 flex place-content-center gap-6'>
             <NavLink

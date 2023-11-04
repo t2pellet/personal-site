@@ -2,6 +2,9 @@ import * as TbIcons from 'react-icons/tb';
 import * as FaIcons from 'react-icons/fa6';
 import * as SiIcons from 'react-icons/si';
 
+export const languages = ['en', 'fr'];
+export type Language = (typeof languages)[number];
+
 export const themes = ['dracula', 'cmyk'] as const; // dark, light
 export type Theme = (typeof themes)[number];
 export type ThemeColors = {
@@ -28,15 +31,6 @@ export enum SectionEnum {
   SCHOOL = 'school',
   CONTACT = 'contact',
 }
-export const sections: Record<SectionEnum, string> = {
-  about: 'About',
-  skills: 'Skills',
-  projects: 'Projects',
-  work: 'Experience',
-  school: 'Education',
-  contact: 'Contact',
-};
-
 export const Icons = {
   ...TbIcons,
   ...FaIcons,

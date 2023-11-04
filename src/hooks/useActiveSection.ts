@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { SectionEnum, sections } from '@/types';
+import { SectionEnum } from '@/types';
 
 function getElementWindowTop(elem: HTMLElement) {
   return elem && typeof elem.getBoundingClientRect === 'function'
@@ -14,7 +14,7 @@ export default function useActiveSection() {
   );
 
   const updateActiveState = useCallback(() => {
-    const firstActiveSection = Object.keys(sections).find((section) => {
+    const firstActiveSection = Object.values(SectionEnum).find((section) => {
       const element = document.getElementById(section);
       if (element != null) {
         const elementTop = getElementWindowTop(element);

@@ -24,7 +24,7 @@ export default function NavBarDropdown({ children }: PropsWithChildren) {
           isOpen.current = !isOpen.current;
         }}
       >
-        <TbMenu2 />
+        <TbMenu2 size={32} />
       </label>
       <ul
         tabIndex={0}

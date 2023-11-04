@@ -1,6 +1,7 @@
 import React, { PropsWithChildren } from 'react';
-import { SectionEnum, sections } from '@/types';
+import { SectionEnum } from '@/types';
 import classNames from 'classnames';
+import { useTranslations } from 'next-intl';
 
 export type SectionProps = PropsWithChildren<{
   section: SectionEnum;
@@ -14,11 +15,12 @@ export default function PageSection({
   hideTitle = false,
   className,
 }: SectionProps) {
+  const dict = useTranslations('titles');
   return (
     <div id={section} className={classNames('flex w-full flex-col', className)}>
       {!hideTitle && (
         <h1 className='mb-12 text-center text-5xl font-extrabold'>
-          {sections[section]}
+          {dict(section)}
         </h1>
       )}
       <div>{children}</div>

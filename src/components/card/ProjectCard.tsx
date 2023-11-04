@@ -2,24 +2,26 @@ import React, { HTMLProps } from 'react';
 import { TbBrandGithub as IconBrandGithub } from 'react-icons/tb';
 import Image from 'next/image';
 import classNames from 'classnames';
+import { useTranslations } from 'next-intl';
 
-export type ProjectCardProps = HTMLProps<any> & {
+export type ProjectCardProps = {
+  id: string;
   name: string;
   image: string;
-  description: string;
-  repository?: string;
   link?: string;
+  repository?: string;
 };
 
 export default function ProjectCard({
   name,
-  description,
-  repository,
+  id,
   image,
   link,
+  repository,
   className,
   ...props
-}: ProjectCardProps) {
+}: HTMLProps<HTMLDivElement> & ProjectCardProps) {
+  const dict = useTranslations('sections.projects');
   return (
     <div
       className={classNames(
@@ -30,6 +32,7 @@ export default function ProjectCard({
         'project-card',
         className
       )}
+      id={id}
       {...props}
     >
       <div className='overflow-hidden'>
@@ -52,7 +55,7 @@ export default function ProjectCard({
               'project-card-description'
             )}
           >
-            <p>{description}</p>
+            <p>{dict(id)}</p>
           </div>
           <div
             className={classNames(

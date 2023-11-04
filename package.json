@@ -15,8 +15,11 @@
   "dependencies": {
     "@emailjs/nodejs": "^2.2.0",
     "classnames": "^2.3.2",
+    "dompurify": "^3.0.6",
+    "interweave": "^13.1.0",
     "lodash.debounce": "^4.0.8",
     "next": "13.5.4",
+    "next-intl": "^3.0.0-beta.19",
     "react": "^18.2.0",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
@@ -25,8 +28,7 @@
     "tsparticles-preset-links": "^2.12.0",
     "tsparticles-preset-snow": "^2.12.0",
     "tsparticles-preset-stars": "^2.12.0",
-    "use-local-storage": "^3.0.0",
-    "xhr2": "^0.2.1"
+    "use-local-storage": "^3.0.0"
   },
   "devDependencies": {
     "@types/lodash.debounce": "^4.0.8",
@@ -41,6 +43,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-tailwindcss": "^3.13.0",
     "husky": "^8.0.0",
+    "interweave-ssr": "^2.0.0",
     "lint-staged": "^14.0.1",
     "postcss": "^8",
     "prettier": "^3.0.3",

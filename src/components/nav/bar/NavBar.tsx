@@ -1,28 +1,29 @@
 import React from 'react';
 import ThemeToggle from '@/components/toggle/ThemeToggle';
 import NavBarDropdown from '@/components/nav/bar/NavBarDropdown';
-import { SectionEnum, sections } from '@/types';
+import { SectionEnum } from '@/types';
 import classNames from 'classnames';
-import NavBarLink from '@/components/nav/bar/NavBarLink';
+import NavBarLink from '@/components/nav/bar/link';
 import ParticleToggle from '@/components/toggle/ParticleToggle';
+import { useLocale } from 'next-intl';
 
 export default function NavBar() {
+  const locale = useLocale();
   const NavItems = () => (
     <>
-      {Object.keys(sections).map((section) => {
-        const sectionEnum = section as SectionEnum;
+      {Object.values(SectionEnum).map((section) => {
         return (
           <li key={`nav-link-${section}`}>
-            <NavBarLink section={sectionEnum} />
+            <NavBarLink section={section} />
           </li>
         );
       })}
       <a
         className='btn btn-ghost btn-lg flex place-content-center text-center align-middle text-lg text-info md:btn-md lg:btn-sm'
-        href='docs/resume.pdf'
+        href={`docs/${locale}/resume.pdf`}
         target='_blank'
       >
-        Resume
+        Resumé
       </a>
     </>
   );

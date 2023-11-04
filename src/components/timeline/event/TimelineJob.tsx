@@ -1,11 +1,8 @@
-import TimelineEvent, { RawTimelineEventProps } from './TimelineEvent';
+import TimelineEvent from './TimelineEvent';
 import LabeledIcon, { LabeledIconProps } from '@/components/LabeledIcon';
 import classNames from 'classnames';
 
-export type TimelineJobProps = Omit<
-  RawTimelineEventProps,
-  'children' | 'baseHeight' | 'icon'
-> & {
+export type TimelineJobProps = {
   title: string;
   role: string;
   date: string;

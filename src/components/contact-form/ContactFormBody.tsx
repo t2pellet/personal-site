@@ -6,7 +6,16 @@ import { FormEvent, useCallback, useRef } from 'react';
 import { experimental_useFormState as useFormState } from 'react-dom';
 import ContactFormStatusMsg from '@/components/contact-form/ContactFormStatusMsg';
 
-export default function ContactFormBody() {
+type FormBodyProps = {
+  placeholders: {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+  };
+};
+
+export default function ContactFormBody({ placeholders }: FormBodyProps) {
   const formRef = useRef<HTMLFormElement>(null);
   const onSubmit = useCallback(
     (e: FormEvent<HTMLFormElement>) => {
@@ -32,27 +41,27 @@ export default function ContactFormBody() {
       <input
         name='name'
         type='text'
-        placeholder='Enter your name'
+        placeholder={placeholders.name}
         className='input input-bordered input-primary w-full'
         required
       />
       <input
         name='email'
         type='email'
-        placeholder='Enter your email'
+        placeholder={placeholders.email}
         className='input input-bordered input-primary w-full'
         required
       />
       <input
         name='phone'
         type='number'
-        placeholder='Enter your phone #'
+        placeholder={placeholders.phone}
         className='input input-bordered input-primary w-full'
         required
       />
       <textarea
         name='message'
-        placeholder='Your message'
+        placeholder={placeholders.message}
         className='textarea textarea-primary w-full'
         required
       />
