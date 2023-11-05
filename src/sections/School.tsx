@@ -15,6 +15,7 @@ export type SchoolProps = {
 };
 
 export default function School({ schools }: SchoolProps) {
+  const transitions = useTranslations('transitions.content');
   const dict = useTranslations('sections.school');
   return (
     <PageSection section={SectionEnum.SCHOOL}>
@@ -32,7 +33,7 @@ export default function School({ schools }: SchoolProps) {
         className='btn btn-ghost mx-auto mt-4 flex h-auto w-fit flex-col rounded-2xl p-4 text-xl'
         section={SectionEnum.CONTACT}
       >
-        <span>{`Let's get in touch`}</span>
+        <span>{transitions('contact')}</span>
         <TbChevronsDown size={24} />
       </NavLink>
     </PageSection>

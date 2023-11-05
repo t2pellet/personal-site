@@ -12,6 +12,7 @@ type FormBodyProps = {
     email: string;
     phone: string;
     message: string;
+    submit: string;
   };
 };
 
@@ -65,7 +66,7 @@ export default function ContactFormBody({ placeholders }: FormBodyProps) {
         className='textarea textarea-primary w-full'
         required
       />
-      <ContactFormSubmitBtn />
+      <ContactFormSubmitBtn label={placeholders.submit} />
       <ContactFormStatusMsg state={state} />
     </form>
   );

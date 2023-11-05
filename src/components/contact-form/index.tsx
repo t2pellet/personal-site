@@ -12,6 +12,7 @@ export default function ContactForm() {
           email: dict('email'),
           phone: dict('phone'),
           message: dict('message'),
+          submit: dict('submit'),
         }}
       />
     </ContentDiv>

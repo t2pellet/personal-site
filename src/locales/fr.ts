@@ -94,15 +94,17 @@ export default {
         email: 'Entrez votre adresse e-mail',
         phone: 'Entrez votre numéro de téléphone',
         message: 'Votre message',
+        submit: 'Envoyer 🚀',
       },
     },
   },
   transitions: {
-    label: 'Continuer la lecture',
+    label: 'Continue',
     content: {
       projects: 'Vous voulez savoir où je les ai utilisées ?',
       work: "Vous voulez savoir où j'ai travaillé ?",
       school: 'Vous voulez en savoir plus sur mon éducation ?',
+      contact: 'Prenons Contact',
     },
   },
 } as const;

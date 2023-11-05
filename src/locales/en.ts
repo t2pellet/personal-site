@@ -90,6 +90,7 @@ export default {
         email: 'Enter your email',
         phone: 'Enter your phone #',
         message: 'Your message',
+        submit: 'Send 🚀',
       },
     },
   },
@@ -99,6 +100,7 @@ export default {
       projects: "Wanna know where I used 'em?",
       work: "Wanna know where I've worked?",
       school: 'Wanna know about my education?',
+      contact: `Let's get in touch`,
     },
   },
 } as const;

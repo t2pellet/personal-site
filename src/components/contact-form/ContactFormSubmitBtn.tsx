@@ -1,8 +1,9 @@
 'use client';
 
+// @ts-ignore
 import { experimental_useFormStatus as useFormStatus } from 'react-dom';
 
-export default function ContactFormSubmitBtn() {
+export default function ContactFormSubmitBtn({ label }: { label: string }) {
   const { pending } = useFormStatus();
 
   return (
@@ -10,7 +11,7 @@ export default function ContactFormSubmitBtn() {
       {pending ? (
         <span className='loading loading-spinner loading-lg'></span>
       ) : (
-        `Send 🚀`
+        `${label}`
       )}
     </button>
   );
