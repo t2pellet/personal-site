@@ -16,9 +16,11 @@ function RawLanguageToggle({ lang }: { lang: Language }) {
     });
   };
 
-  const onClick = useCallback(() => {
+  const onClick = useCallback(async () => {
     const newLang = lang == 'en' ? 'fr' : 'en';
-    router.replace(`/${newLang}`);
+    router.replace(`/${newLang}`, {
+      scroll: false,
+    });
   }, [lang, router]);
 
   return (
