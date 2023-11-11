@@ -6,6 +6,11 @@ const nextConfig = {
   experimental: {
     serverActions: true,
   },
+  publicRuntimeConfig: {
+    experimental: {
+      serverActions: true,
+    },
+  },
 };
 
 module.exports = withInternationalization(nextConfig);

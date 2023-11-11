@@ -2,7 +2,7 @@
 
 import contactAction, { FormStateType } from '@/actions/contact-form';
 import ContactFormSubmitBtn from '@/components/contact-form/ContactFormSubmitBtn';
-import { FormEvent, useCallback, useRef } from 'react';
+import { useRef } from 'react';
 import { experimental_useFormState as useFormState } from 'react-dom';
 import ContactFormStatusMsg from '@/components/contact-form/ContactFormStatusMsg';
 
@@ -18,13 +18,6 @@ type FormBodyProps = {
 
 export default function ContactFormBody({ placeholders }: FormBodyProps) {
   const formRef = useRef<HTMLFormElement>(null);
-  const onSubmit = useCallback(
-    (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      formRef.current?.reset();
-    },
-    [formRef]
-  );
   const [state, formAction] = useFormState<FormStateType, FormData>(
     contactAction,
     {
@@ -35,9 +28,12 @@ export default function ContactFormBody({ placeholders }: FormBodyProps) {
   return (
     <form
       className='flex flex-col place-items-center gap-4'
-      action={formAction}
+      action={async (formData) => {
+        const result = formAction(formData);
+        // formRef.current?.reset();
+        return result;
+      }}
       ref={formRef}
-      onSubmit={onSubmit}
     >
       <input
         name='name'
