@@ -18,6 +18,7 @@ export default async function getData(
     headers: {
       Authorization: `Bearer ${STRAPI_TOKEN}`,
     },
+    cache: 'no-store',
     next: {
       tags: ['strapi'],
     },

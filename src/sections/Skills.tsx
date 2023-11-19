@@ -5,8 +5,8 @@ import LabeledIcon, { LabeledIconProps } from '@/components/LabeledIcon';
 import ContentDiv from '@/components/ContentDiv';
 import { useLocale } from 'next-intl';
 import getData from '@/util/fetch';
-import Markdown from 'react-markdown';
 import mapLinks from '@/util/links';
+import { Markup } from 'interweave';
 
 export type SkillsData = {
   content: string;
@@ -29,7 +29,7 @@ export default async function Skills() {
   return (
     <PageSection section={SectionEnum.SKILLS}>
       <ContentDiv className='mx-auto text-center md:w-3/4 xl:w-2/4'>
-        <Markdown>{content}</Markdown>
+        <Markup content={content} />
       </ContentDiv>
       <div className='mx-auto flex max-w-screen-lg flex-wrap place-content-center gap-4 py-8'>
         {skills.map((skill, idx) => (

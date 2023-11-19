@@ -6,8 +6,8 @@ import '@/app/globals.scss';
 import NavLink from '@/components/nav/NavLink';
 import ContentDiv from '@/components/ContentDiv';
 import { useLocale, useTranslations } from 'next-intl';
-import ReactMarkdown from 'react-markdown';
 import getData from '@/util/fetch';
+import { Markup } from 'interweave';
 
 type AboutMeContent = {
   headshot: {
@@ -51,7 +51,7 @@ function RawAboutMe(data: AboutMeContent) {
             <span className='font-black text-primary'>Tenzin</span> Pelletier
           </div>
           <ContentDiv className='text-center lg:text-left'>
-            <ReactMarkdown>{data.content}</ReactMarkdown>
+            <Markup content={data.content} />
           </ContentDiv>
           <div className='mt-4 flex place-content-center gap-6'>
             <NavLink

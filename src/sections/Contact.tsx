@@ -5,9 +5,9 @@ import React from 'react';
 import ContentDiv from '@/components/ContentDiv';
 import ContactForm from '@/components/contact-form';
 import { useLocale } from 'next-intl';
-import Markdown from 'react-markdown';
 import getData from '@/util/fetch';
 import mapLinks from '@/util/links';
+import { Markup } from 'interweave';
 
 type ContactData = {
   content: string;
@@ -28,10 +28,10 @@ export default async function Contact() {
   return (
     <PageSection section={SectionEnum.CONTACT}>
       <ContentDiv className='mx-auto text-center md:w-3/4 xl:w-2/4'>
-        <Markdown>{content}</Markdown>
+        <Markup content={content} />
       </ContentDiv>
       <div className='flex flex-wrap place-content-center gap-4 py-8'>
-        {links.map((skill) => (
+        {links?.map((skill) => (
           <LabeledIcon key={`social-link-${skill}`} {...skill} />
         ))}
       </div>

@@ -2,7 +2,7 @@ import React, { HTMLProps } from 'react';
 import { TbBrandGithub as IconBrandGithub } from 'react-icons/tb';
 import Image from 'next/image';
 import classNames from 'classnames';
-import Markdown from 'react-markdown';
+import { Markup } from 'interweave';
 
 export type ProjectCardProps = {
   id: string;
@@ -57,7 +57,7 @@ export default function ProjectCard({
             )}
           >
             <div>
-              <Markdown>{description}</Markdown>
+              <Markup content={description} />
             </div>
           </div>
           <div
