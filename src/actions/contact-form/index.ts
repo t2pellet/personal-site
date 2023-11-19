@@ -14,12 +14,12 @@ const contactFn = debounce(
     );
     try {
       const result = await emailJS.send(
-        process.env.NEXT_PUBLIC_EMAIL_SERVICE as string,
-        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE as string,
+        process.env.EMAIL_SERVICE as string,
+        process.env.EMAIL_TEMPLATE as string,
         formDataRecord,
         {
-          publicKey: process.env.NEXT_PUBLIC_EMAIL_KEY as string,
-          privateKey: process.env.NEXT_PUBLIC_EMAIL_PRIVATE_KEY as string,
+          publicKey: process.env.EMAIL_KEY as string,
+          privateKey: process.env.EMAIL_PRIVATE_KEY as string,
         }
       );
     } catch (e) {

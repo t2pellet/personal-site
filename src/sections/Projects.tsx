@@ -1,16 +1,36 @@
 import React from 'react';
 import PageSection from '@/components/PageSection';
-import { SectionEnum } from '@/types';
+import { Language, SectionEnum } from '@/types';
 import ProjectCard, { ProjectCardProps } from '@/components/card/ProjectCard';
 import KeepReading from '@/components/KeepReading';
-import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+import getData from '@/util/fetch';
 
-export type ProjectsProps = {
+export type ProjectsData = {
   projects: ProjectCardProps[];
 };
 
-export default function Projects({ projects }: ProjectsProps) {
-  const dict = useTranslations('transitions');
+async function getProjectData(lang: Language): Promise<ProjectsData> {
+  const result = await getData('projects');
+  const projects: ProjectCardProps[] = result.data.map((entry: any) => {
+    const { title, description, url, repo, slug, picture } = entry.attributes;
+    const { url: image } =
+      picture.data.attributes.formats.small || picture.data.attributes;
+    return {
+      id: slug,
+      name: title,
+      description,
+      image,
+      link: url,
+      repository: repo,
+    };
+  });
+  return { projects };
+}
+
+export default async function Projects() {
+  const lang = useLocale();
+  const { projects } = await getProjectData(lang);
   return (
     <PageSection section={SectionEnum.PROJECTS}>
       <div className='mx-auto w-fit'>

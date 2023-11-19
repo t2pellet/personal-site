@@ -1,15 +1,36 @@
 import React from 'react';
 import PageSection from '@/components/PageSection';
-import { SectionEnum } from '@/types';
+import { Language, SectionEnum } from '@/types';
 import Image from 'next/image';
-import headshotPic from '../../public/headshot.jpg';
 import '@/app/globals.scss';
 import NavLink from '@/components/nav/NavLink';
 import ContentDiv from '@/components/ContentDiv';
-import { useTranslations } from 'next-intl';
-import { Markup } from 'interweave';
+import { useLocale, useTranslations } from 'next-intl';
+import ReactMarkdown from 'react-markdown';
+import getData from '@/util/fetch';
 
-export default function AboutMe() {
+type AboutMeContent = {
+  headshot: {
+    url: string;
+    width: number;
+    height: number;
+  };
+  content: string;
+};
+
+async function getAboutData(lang: Language): Promise<AboutMeContent> {
+  const result = await getData('about', lang);
+  const { attributes } = result.data;
+  const content = attributes.content;
+  const { width, height, url } = attributes.headshot.data.attributes;
+
+  return {
+    content,
+    headshot: { width, height, url },
+  };
+}
+
+function RawAboutMe(data: AboutMeContent) {
   const dict = useTranslations('sections.aboutMe');
 
   return (
@@ -17,7 +38,9 @@ export default function AboutMe() {
       <div className='relative mx-auto grid w-full max-w-[1600px] grid-cols-1 gap-4 leading-snug lg:grid-cols-2'>
         <div className='place-items-center pt-4 sm:px-1 md:px-2 lg:flex lg:px-4 xl:px-8 xl:pt-12'>
           <Image
-            src={headshotPic}
+            src={data.headshot.url}
+            width={data.headshot.width}
+            height={data.headshot.height}
             alt='Tenzin Pelletier'
             className='mx-auto w-3/4 rounded-2xl shadow-md lg:w-full xl:rounded-3xl'
             priority
@@ -28,7 +51,7 @@ export default function AboutMe() {
             <span className='font-black text-primary'>Tenzin</span> Pelletier
           </div>
           <ContentDiv className='text-center lg:text-left'>
-            <Markup content={dict.raw('content')} />
+            <ReactMarkdown>{data.content}</ReactMarkdown>
           </ContentDiv>
           <div className='mt-4 flex place-content-center gap-6'>
             <NavLink
@@ -48,4 +71,10 @@ export default function AboutMe() {
       </div>
     </PageSection>
   );
+}
+
+export default async function AboutMe() {
+  const locale = useLocale();
+  const data = await getAboutData(locale);
+  return <RawAboutMe {...data} />;
 }

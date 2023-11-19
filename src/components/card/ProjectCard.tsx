@@ -2,12 +2,13 @@ import React, { HTMLProps } from 'react';
 import { TbBrandGithub as IconBrandGithub } from 'react-icons/tb';
 import Image from 'next/image';
 import classNames from 'classnames';
-import { useTranslations } from 'next-intl';
+import Markdown from 'react-markdown';
 
 export type ProjectCardProps = {
   id: string;
   name: string;
   image: string;
+  description?: string;
   link?: string;
   repository?: string;
 };
@@ -15,13 +16,13 @@ export type ProjectCardProps = {
 export default function ProjectCard({
   name,
   id,
+  description,
   image,
   link,
   repository,
   className,
   ...props
 }: HTMLProps<HTMLDivElement> & ProjectCardProps) {
-  const dict = useTranslations('sections.projects');
   return (
     <div
       className={classNames(
@@ -55,7 +56,9 @@ export default function ProjectCard({
               'project-card-description'
             )}
           >
-            <p>{dict(id)}</p>
+            <p>
+              <Markdown>{description}</Markdown>
+            </p>
           </div>
           <div
             className={classNames(

@@ -11,6 +11,14 @@ const nextConfig = {
       serverActions: true,
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+    ],
+  },
 };
 
 module.exports = withInternationalization(nextConfig);

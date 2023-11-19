@@ -5,7 +5,7 @@ import Projects from '@/sections/Projects';
 import Work from '@/sections/Work';
 import School from '@/sections/School';
 import Contact from '@/sections/Contact';
-import { CONTACT_LINKS, JOBS, PROJECTS, SCHOOLS, SKILLS } from '@/constants';
+import { CONTACT_LINKS, JOBS, SCHOOLS } from '@/constants';
 import { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { Language } from '@/types';
@@ -24,8 +24,8 @@ export default function Home({
   return (
     <main className='flex min-h-screen flex-col items-center justify-between space-y-16 p-2 pb-12 sm:px-4 md:px-8 lg:px-12 xl:px-24 2xl:px-36'>
       <AboutMe />
-      <Skills skills={SKILLS} />
-      <Projects projects={PROJECTS} />
+      <Skills />
+      <Projects />
       <Work jobs={JOBS} />
       <School schools={SCHOOLS} />
       <Contact links={CONTACT_LINKS} />
