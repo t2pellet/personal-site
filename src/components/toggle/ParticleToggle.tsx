@@ -13,7 +13,7 @@ export default function ParticleToggle() {
 
   const fullClasses = (className: string, on: boolean) => {
     return classNames(className, 'pointer-events-none absolute top-1', {
-      ['hidden']: on ? particles : !particles,
+      ['hidden']: on ? !loaded || particles : loaded && !particles,
     });
   };
 
