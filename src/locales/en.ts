@@ -12,8 +12,7 @@ Proficient in <b>TypeScript</b>, <b>Next.js</b> and <b>React</b>, I also have a 
 I've found I'm at my best when being pushed to learn in a fast-paced, dynamic work environment. This extends beyond the world of code!
 
 I'm on a <b>guitar-learning</b><div class='tooltip tooltip-bottom' data-tip='guitar'>🎸</div> journey and enjoy diving into the realms of <b>photography</b> <div class='tooltip tooltip-bottom' data-tip='photography'>📸</div>, <b>board games</b> <div class='tooltip tooltip-bottom' data-tip='board games'>🎲</div> and <b>D&D</b> <div class='tooltip tooltip-bottom' data-tip='dnd'>🧙🏾‍♂️</div>
-            
-      
+             
 If you're intrigued by my work, like <b>Metalworks</b> or <b>Strawgolem</b>, don't hesitate to get in touch.
       
 Let's <a class='decoration-0' href=${LINKEDIN} target='_blank'><b>connect</b></a> and explore the endless possibilities of tech together!
