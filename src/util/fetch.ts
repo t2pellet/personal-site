@@ -19,7 +19,7 @@ export default async function getData(
       Authorization: `Bearer ${STRAPI_TOKEN}`,
     },
     next: {
-      revalidate: 1800,
+      tags: ['strapi'],
     },
   });
   if (!result.ok) {
