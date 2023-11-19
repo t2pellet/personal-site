@@ -7,14 +7,13 @@ import { TbMoon as IconMoon, TbSun as IconSun } from 'react-icons/tb';
 function RawThemeToggle() {
   const { colorScheme, toggleTheme, loaded } = useContext(ThemeContext);
 
-  if (!loaded) return null;
   return (
     <div className='relative flex h-fit'>
       <input
         type='checkbox'
         className='toggle'
         onChange={toggleTheme}
-        checked={colorScheme != 'light'}
+        checked={!loaded || colorScheme != 'light'}
       />
       <IconSun
         size={16}

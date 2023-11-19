@@ -17,14 +17,13 @@ export default function ParticleToggle() {
     });
   };
 
-  if (!loaded) return null;
   return (
     <div className='relative flex h-fit'>
       <input
         type='checkbox'
         className='toggle'
         onChange={() => setParticles(!particles)}
-        checked={particles}
+        checked={!loaded || particles}
       />
       <TbStarsOff size={16} className={fullClasses('left-1.5', false)} />
       <TbStars size={16} className={fullClasses('right-1.5', true)} />
