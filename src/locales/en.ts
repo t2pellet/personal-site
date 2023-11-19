@@ -3,13 +3,13 @@ import { SectionEnum } from '@/types';
 
 const aboutMe = `
 <div>
-<b>Hey there!</b> I'm Tenzin, a soon-to-be <b>Computer Science </b> <div class='tooltip tooltip-bottom' data-tip='graduate'>🎓</div> @ <b>UWaterloo</b> with nearly <b>2 years</b> of <div class='tooltip tooltip-bottom' data-tip='work'>🛠</div> <b>experience</b>.
+<b>Hey there!</b> I'm Tenzin, a <b>Computer Science</b> <b>graduate</b> <div class='tooltip tooltip-bottom' data-tip='graduate'>🎓</div> from the <b>University of Waterloo</b> with nearly <b>2 years</b> of <b>work experience</b> <div class='tooltip tooltip-bottom' data-tip='work'>🛠</div>.
       
-I thrive on crafting <b>user-centric</b> features that make a real <b>impact</b>. There's nothing like seeing my work <b>tangibly</b> come to life & leave a <b>positive mark</b> on its users.
+My passion lies in developing <b>user-centric</b> features that have a <b>tangible</b> impact. Witnessing my work come to life and <b>positively</b> affect users is what drives me.      
       
-My toolkit focuses on <b>TypeScript</b>, <b>Next.js</b>, and <b>React</b>, but I'm no stranger to <b>Java</b>, <b>Spring</b>, <b>C#</b>, or <b>Unity</b>
+Proficient in <b>TypeScript</b>, <b>Next.js</b> and <b>React</b>, I also have a versatile skillset that extends to <b>Java</b>, <b>Spring</b>, <b>C#</b>, and <b>Unity</b>
 
-Beyond the world of code, I'm on a <div class='tooltip tooltip-bottom' data-tip='guitar'>🎸</div><b>-learning</b> journey and enjoy diving into the realms of <div class='tooltip tooltip-bottom' data-tip='photography'>📸</div> , <div class='tooltip tooltip-bottom' data-tip='board games'>🎲</div> and <div class='tooltip tooltip-bottom' data-tip='dnd'>🧙🏾‍♂️</div>
+Beyond the world of code, I'm on a <b>guitar-learning</b><div class='tooltip tooltip-bottom' data-tip='guitar'>🎸</div> journey and enjoy diving into the realms of <b>photography</b> <div class='tooltip tooltip-bottom' data-tip='photography'>📸</div>, <b>board games</b> <div class='tooltip tooltip-bottom' data-tip='board games'>🎲</div> and <b>D&D</b> <div class='tooltip tooltip-bottom' data-tip='dnd'>🧙🏾‍♂️</div>
       
 If you're intrigued by my work, like <b>Metalworks</b> or <b>Strawgolem</b>, don't hesitate to get in touch.
       

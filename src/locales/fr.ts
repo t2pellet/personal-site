@@ -3,18 +3,19 @@ import { SectionEnum } from '@/types';
 
 const aboutMe = `
 <div>
-<b>Salut!</b> Je m'appelle Tenzin, un futur <div class='tooltip tooltip-bottom' data-tip='diplômé'>🎓</div> en <b>Informatique</b> à <b>UWaterloo</b> avec presque <b>2 ans d'éxperience</b> de <div class='tooltip tooltip-bottom' data-tip='travail'>🛠</div>
-      
-Je prospère en concevant des fonctionnalités <b>axées sur l'utilisateur</b> qui ont un véritable <b>impact</b>. Rien n'égale le fait de voir mon travail prendre forme de manière <b>tangible</b> et laisser une <b>empreinte positive</b> sur ses utilisateurs.
-      
-Mon ensemble d'outils se concentre sur <b>TypeScript</b>, <b>Next.js</b>, and <b>React</b>, mais je suis aussi familier avec <b>Java</b>, <b>Spring</b>, <b>C#</b>, et <b>Unity</b>
-
-Au-delà du monde du code, je suis en train d'apprendre la <div class='tooltip tooltip-bottom' data-tip='guitare'>🎸</div> et j'apprécie plonger dans les univers de la <div class='tooltip tooltip-bottom' data-tip='photographie'>📸</div>, des <div class='tooltip tooltip-bottom' data-tip='jeux de société'>🎲</div> et de <div class='tooltip tooltip-bottom' data-tip="Dungeons & Dragons (D&D)">🧙🏾‍♂️</div>.
-
-Si vous êtes intrigué par mon travail, comme Metalworks ou Strawgolem, n'hésitez pas à me contacter.
-
-<a class='decoration-0' href=${LINKEDIN} target='_blank'><b>Connectons-nous</b></a> et explorons ensemble les innombrables possibilités de la technologie!
+<b>Salut !</b> Je suis Tenzin, <b>diplômé</b> en <b>Informatique</b> <div class='tooltip tooltip-bottom' data-tip='diplômé'>🎓</div> de l'Université de Waterloo avec près de <b>2 ans</b> d'<b>expérience professionnelle</b> <div class='tooltip tooltip-bottom' data-tip='travail'>🛠</div>.
+  
+Ma passion réside dans le développement de fonctionnalités <b>axées sur l'utilisateur</b> qui ont un <b>impact tangible</b>. Voir mon travail prendre vie et <b>influencer positivement</b> les utilisateurs est ce qui me motive.
+  
+Maîtrisant <b>TypeScript</b>, <b>Next.js</b> et <b>React</b>, je possède également un ensemble de compétences polyvalent qui s'étend à <b>Java</b>, <b>Spring</b>, <b>C#</b> et <b>Unity</b>.
+  
+Hors du monde d'informatique, je suis en apprentissage de la <div class='tooltip tooltip-bottom' data-tip='guitare'>🎸</div><b>guitare</b> et j'apprécie plonger dans les domaines de la <div class='tooltip tooltip-bottom' data-tip='photographie'>📸</div> <b>photographie</b>, des <div class='tooltip tooltip-bottom' data-tip='jeux de société'>🎲</div> <b>jeux de société</b> et de <div class='tooltip tooltip-bottom' data-tip='D&D'>🧙🏾‍♂️</div><b>D&D</b>.
+  
+Si mon travail vous intrigue, comme <b>Metalworks</b> ou <b>Strawgolem</b>, n'hésitez pas à me contacter.
+  
+Connectons-nous et explorons ensemble les possibilités infinies de la technologie ! <a class='decoration-0' href=${LINKEDIN} target='_blank'><b>Connectons-nous</b></a>.
 </div>
+
 `;
 
 const skills = `
