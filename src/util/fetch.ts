@@ -18,7 +18,9 @@ export default async function getData(
     headers: {
       Authorization: `Bearer ${STRAPI_TOKEN}`,
     },
-    cache: 'no-store',
+    next: {
+      revalidate: 1800,
+    },
   });
   if (!result.ok) {
     throw new Error('Failed to get data for path: ' + path);
