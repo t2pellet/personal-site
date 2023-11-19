@@ -56,9 +56,9 @@ export default function ProjectCard({
               'project-card-description'
             )}
           >
-            <p>
+            <div>
               <Markdown>{description}</Markdown>
-            </p>
+            </div>
           </div>
           <div
             className={classNames(

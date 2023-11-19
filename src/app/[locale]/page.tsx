@@ -5,7 +5,6 @@ import Projects from '@/sections/Projects';
 import Work from '@/sections/Work';
 import School from '@/sections/School';
 import Contact from '@/sections/Contact';
-import { CONTACT_LINKS, JOBS, SCHOOLS } from '@/constants';
 import { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { Language } from '@/types';
@@ -26,9 +25,9 @@ export default function Home({
       <AboutMe />
       <Skills />
       <Projects />
-      <Work jobs={JOBS} />
-      <School schools={SCHOOLS} />
-      <Contact links={CONTACT_LINKS} />
+      <Work />
+      <School />
+      <Contact />
     </main>
   );
 }

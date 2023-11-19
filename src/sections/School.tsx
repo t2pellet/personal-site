@@ -1,41 +1,41 @@
 import React from 'react';
 import PageSection from '@/components/PageSection';
-import { SectionEnum } from '@/types';
+import { Language, SectionEnum } from '@/types';
 import Timeline from '@/components/timeline/Timeline';
 import { TimelineSchool } from '@/components/timeline/event';
-import NavLink from '@/components/nav/NavLink';
-import { TbChevronsDown } from 'react-icons/tb';
 import { TimelineSchoolProps } from '@/components/timeline/event/TimelineSchool';
-import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+import getData from '@/util/fetch';
+import toDateStr from '@/util/date';
 
-type SchoolProp = { id: string } & Omit<TimelineSchoolProps, 'major' | 'date'>;
-
-export type SchoolProps = {
-  schools: SchoolProp[];
+export type SchoolData = {
+  schools: TimelineSchoolProps[];
 };
 
-export default function School({ schools }: SchoolProps) {
-  const transitions = useTranslations('transitions.content');
-  const dict = useTranslations('sections.school');
+async function getSchoolData(lang: Language): Promise<SchoolData> {
+  const result = await getData('school', lang);
+  const { schools: rawSchools } = result.data.attributes;
+  const schools: TimelineSchoolProps[] = rawSchools.map((school: any) => {
+    const { title, major, from, to } = school;
+    return {
+      title,
+      major,
+      date: `${toDateStr(from, lang)} - ${toDateStr(to, lang)}`,
+    };
+  });
+  return { schools };
+}
+
+export default async function School() {
+  const lang = useLocale();
+  const { schools } = await getSchoolData(lang);
   return (
     <PageSection section={SectionEnum.SCHOOL}>
-      <Timeline className='ml-8 md:mx-auto'>
+      <Timeline className='mb-8 ml-8 md:mx-auto'>
         {schools.map((school, idx) => (
-          <TimelineSchool
-            {...school}
-            major={dict(`${school.id}.major`)}
-            date={dict(`${school.id}.date`)}
-            key={`school-${idx}`}
-          />
+          <TimelineSchool {...school} key={`school-${idx}`} />
         ))}
       </Timeline>
-      <NavLink
-        className='btn btn-ghost mx-auto mt-4 flex h-auto w-fit flex-col rounded-2xl p-4 text-xl'
-        section={SectionEnum.CONTACT}
-      >
-        <span>{transitions('contact')}</span>
-        <TbChevronsDown size={24} />
-      </NavLink>
     </PageSection>
   );
 }

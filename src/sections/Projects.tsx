@@ -2,7 +2,6 @@ import React from 'react';
 import PageSection from '@/components/PageSection';
 import { Language, SectionEnum } from '@/types';
 import ProjectCard, { ProjectCardProps } from '@/components/card/ProjectCard';
-import KeepReading from '@/components/KeepReading';
 import { useLocale } from 'next-intl';
 import getData from '@/util/fetch';
 
@@ -11,7 +10,7 @@ export type ProjectsData = {
 };
 
 async function getProjectData(lang: Language): Promise<ProjectsData> {
-  const result = await getData('projects');
+  const result = await getData('projects', lang);
   const projects: ProjectCardProps[] = result.data.map((entry: any) => {
     const { title, description, url, repo, slug, picture } = entry.attributes;
     const { url: image } =
@@ -42,7 +41,6 @@ export default async function Projects() {
           ))}
         </div>
       </div>
-      <KeepReading className='mt-4' section={SectionEnum.WORK} />
     </PageSection>
   );
 }

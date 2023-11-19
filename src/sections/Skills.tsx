@@ -3,10 +3,10 @@ import PageSection from '@/components/PageSection';
 import { Language, SectionEnum } from '@/types';
 import LabeledIcon, { LabeledIconProps } from '@/components/LabeledIcon';
 import ContentDiv from '@/components/ContentDiv';
-import KeepReading from '@/components/KeepReading';
 import { useLocale } from 'next-intl';
 import getData from '@/util/fetch';
 import Markdown from 'react-markdown';
+import mapLinks from '@/util/links';
 
 export type SkillsData = {
   content: string;
@@ -19,10 +19,7 @@ async function getSkillsData(lang: Language): Promise<SkillsData> {
   const { content, skills } = attributes;
   return {
     content,
-    skills: skills.map((icon: { title: string; icon: string }) => ({
-      name: icon.title,
-      icon: icon.icon,
-    })),
+    skills: mapLinks(skills),
   };
 }
 
@@ -39,7 +36,6 @@ export default async function Skills() {
           <LabeledIcon key={`skill-${idx}`} {...skill} />
         ))}
       </div>
-      <KeepReading section={SectionEnum.PROJECTS} />
     </PageSection>
   );
 }
