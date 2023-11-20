@@ -1,8 +1,10 @@
 import { revalidateTag } from 'next/cache';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
-export async function POST(request: Request) {
-  const token = request.headers.get('Authorization')?.substring(7);
+export const dynamic = 'force-dynamic'; // defaults to force-static
+
+export async function POST(req: NextRequest) {
+  const token = req.headers.get('x-authorization')?.substring(7);
   if (token === process.env.STRAPI_HOOK_TOKEN) {
     revalidateTag('strapi');
     return Response.json({ revalidated: true }, { status: 200 });
