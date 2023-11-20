@@ -39,8 +39,8 @@ export default async function NavBar() {
 
   const NavRoot = ({ mobile = false }: { mobile?: boolean }) => {
     const classes = classNames('btn btn-ghost text-xl normal-case', {
-      ['min-[965px]:hidden']: mobile,
-      ['hidden min-[965px]:flex']: !mobile,
+      ['lg:hidden']: mobile,
+      ['hidden lg:flex']: !mobile,
     });
     return (
       <a className={classes} href='#'>
@@ -61,12 +61,12 @@ export default async function NavBar() {
         <NavRoot />
       </div>
       <div className='navbar-center'>
-        <ul className='menu menu-horizontal hidden px-1 min-[965px]:flex'>
+        <ul className='menu menu-horizontal hidden px-1 lg:flex'>
           <NavItems />
         </ul>
         <NavRoot mobile />
       </div>
-      <div className='navbar-end space-x-2 min-[965px]:space-x-4'>
+      <div className='navbar-end space-x-2 lg:space-x-4'>
         <LanguageToggle lang={locale} />
         <ParticleToggle />
         <ThemeToggle />
