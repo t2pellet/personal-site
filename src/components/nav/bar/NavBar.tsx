@@ -1,15 +1,23 @@
 import React from 'react';
 import ThemeToggle from '@/components/toggle/ThemeToggle';
 import NavBarDropdown from '@/components/nav/bar/NavBarDropdown';
-import { SectionEnum } from '@/types';
+import { Language, SectionEnum } from '@/types';
 import classNames from 'classnames';
 import NavBarLink from '@/components/nav/bar/link';
 import ParticleToggle from '@/components/toggle/ParticleToggle';
 import { useLocale } from 'next-intl';
 import LanguageToggle from '@/components/toggle/LanguageToggle';
+import getData from '@/util/fetch';
 
-export default function NavBar() {
+async function getNavData(lang: Language) {
+  const result = await getData('links', lang);
+  const { linkedin, github, resume } = result.data.attributes;
+  return { linkedin, github, resume };
+}
+
+export default async function NavBar() {
   const locale = useLocale();
+  const { resume: resumeHREF } = await getNavData(locale);
   const NavItems = () => (
     <>
       {Object.values(SectionEnum).map((section) => {
@@ -21,10 +29,10 @@ export default function NavBar() {
       })}
       <a
         className='btn btn-ghost btn-lg flex place-content-center text-center align-middle text-lg text-info md:btn-md lg:btn-sm'
-        href={`docs/${locale}/resume.pdf`}
+        href={resumeHREF}
         target='_blank'
       >
-        Resumé
+        CV
       </a>
     </>
   );
