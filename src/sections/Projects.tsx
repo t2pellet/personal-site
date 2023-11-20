@@ -11,19 +11,21 @@ export type ProjectsData = {
 
 async function getProjectData(lang: Language): Promise<ProjectsData> {
   const result = await getData('projects', lang);
-  const projects: ProjectCardProps[] = result.data.map((entry: any) => {
-    const { title, description, url, repo, slug, picture } = entry.attributes;
-    const { url: image } =
-      picture.data.attributes.formats.small || picture.data.attributes;
-    return {
-      id: slug,
-      name: title,
-      description,
-      image,
-      link: url,
-      repository: repo,
-    };
-  });
+  const projects: ProjectCardProps[] = result.data
+    .map((entry: any) => {
+      const { title, description, url, repo, slug, picture } = entry.attributes;
+      const { url: image } =
+        picture.data.attributes.formats.small || picture.data.attributes;
+      return {
+        id: slug,
+        name: title,
+        description,
+        image,
+        link: url,
+        repository: repo,
+      };
+    })
+    .reverse();
   return { projects };
 }
 
